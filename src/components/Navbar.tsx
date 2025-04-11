@@ -22,19 +22,21 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'
+      scrolled 
+        ? 'backdrop-blur-md shadow-sm py-3 bg-gradient-to-r from-autthia-purple/80 via-autthia-light-purple/70 to-autthia-blue/80' 
+        : 'bg-transparent py-5'
     }`}>
       <div className="container mx-auto flex items-center justify-between">
         <a href="#" className="text-2xl font-bold gradient-text">Autthia</a>
         
         <div className="hidden md:flex items-center gap-8">
-          <a href="#process" className="hover:text-autthia-purple transition-colors">Process</a>
-          <a href="#strategy" className="hover:text-autthia-purple transition-colors">Strategy</a>
-          <a href="#work" className="hover:text-autthia-purple transition-colors">Work</a>
-          <a href="#contact" className="hover:text-autthia-purple transition-colors">Contact</a>
+          <a href="#process" className="hover:text-autthia-purple transition-colors text-white drop-shadow-sm">Process</a>
+          <a href="#strategy" className="hover:text-autthia-purple transition-colors text-white drop-shadow-sm">Strategy</a>
+          <a href="#work" className="hover:text-autthia-purple transition-colors text-white drop-shadow-sm">Work</a>
+          <a href="#contact" className="hover:text-autthia-purple transition-colors text-white drop-shadow-sm">Contact</a>
         </div>
         
-        <Button className="bg-gradient-to-r from-autthia-purple to-autthia-dark-purple hover:opacity-90 transition-opacity">
+        <Button className="bg-white text-autthia-dark-purple hover:bg-white/90 transition-opacity">
           <Instagram className="mr-2 h-4 w-4" />
           Follow Us
         </Button>
