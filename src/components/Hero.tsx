@@ -39,9 +39,15 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Decorative elements */}
-      <FloatingElement className="top-1/4 -left-4 w-32 h-32 bg-autthia-yellow rounded-full blur-2xl opacity-60" />
-      <FloatingElement className="bottom-1/4 -right-10 w-40 h-40 bg-autthia-pink rounded-full blur-2xl opacity-60" animationClass="animate-float-slow" />
-      <FloatingElement className="top-1/3 right-1/4 w-24 h-24 bg-autthia-blue rounded-full blur-xl opacity-40" animationClass="animate-float-fast" />
+      <FloatingElement className="top-1/4 -left-4 w-32 h-32 bg-autthia-yellow rounded-full blur-2xl opacity-60">
+        <div></div>
+      </FloatingElement>
+      <FloatingElement className="bottom-1/4 -right-10 w-40 h-40 bg-autthia-pink rounded-full blur-2xl opacity-60" animationClass="animate-float-slow">
+        <div></div>
+      </FloatingElement>
+      <FloatingElement className="top-1/3 right-1/4 w-24 h-24 bg-autthia-blue rounded-full blur-xl opacity-40" animationClass="animate-float-fast">
+        <div></div>
+      </FloatingElement>
       
       {/* Instagram UI elements */}
       <FloatingElement className="hidden md:block top-24 right-1/4 bg-white rounded-xl shadow-lg p-2" animationClass="animate-float-slow">
