@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { Play, Pause } from 'lucide-react';
+import { Play, Pause, Video } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -55,7 +55,7 @@ const VideoCard = ({ video }) => {
   
   return (
     <div className="video-card h-full">
-      <div className="relative aspect-video bg-black rounded-xl overflow-hidden shadow-lg">
+      <div className="relative aspect-[9/16] bg-black rounded-xl overflow-hidden shadow-lg">
         <img 
           src={video.thumbnail} 
           alt={video.title} 
@@ -132,9 +132,12 @@ const VideoShowcase = () => {
           <span className="gradient-text">Our Work</span>
         </h2>
         
-        <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12 reveal-on-scroll">
-          Experience a curated collection of authentic content we've created for founders just like you.
-        </p>
+        <div className="flex items-center justify-center mb-8 reveal-on-scroll">
+          <Video className="w-6 h-6 text-autthia-purple mr-2" />
+          <p className="text-center text-muted-foreground max-w-2xl mx-auto">
+            Experience our authentic vertical video content created for founders just like you.
+          </p>
+        </div>
         
         <div className="max-w-6xl mx-auto reveal-on-scroll">
           <div className="flex justify-end mb-4">
@@ -151,7 +154,7 @@ const VideoShowcase = () => {
           <Carousel setApi={setApi} className="w-full">
             <CarouselContent className="-ml-2 md:-ml-4">
               {videos.map((video) => (
-                <CarouselItem key={video.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={video.id} className="pl-2 md:pl-4 md:basis-1/4 lg:basis-1/5">
                   <VideoCard video={video} />
                 </CarouselItem>
               ))}
