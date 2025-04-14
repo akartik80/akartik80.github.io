@@ -1,7 +1,14 @@
 
-import React, { useEffect } from 'react';
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Play } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Play, Pause } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 // Sample videos - in a real implementation, you would fetch these from an API
 const videos = [
@@ -43,31 +50,45 @@ const videos = [
   }
 ];
 
-const VideoCard = ({ video }) => (
-  <div className="video-card min-w-[280px] max-w-xs flex-shrink-0 mx-4">
-    <div className="relative aspect-[9/16] bg-gray-200 overflow-hidden rounded-xl">
-      <img 
-        src={video.thumbnail} 
-        alt={video.title} 
-        className="w-full h-full object-cover"
-      />
-      <div className="video-overlay p-4">
-        <div>
-          <div className="flex items-center gap-2 mb-2">
-            <div className="w-8 h-8 rounded-full bg-autthia-purple flex items-center justify-center">
-              <Play className="h-4 w-4 text-white" />
-            </div>
-            <span className="text-white font-medium">{video.client}</span>
-          </div>
+const VideoCard = ({ video }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  
+  return (
+    <div className="video-card h-full">
+      <div className="relative aspect-video bg-black rounded-xl overflow-hidden shadow-lg">
+        <img 
+          src={video.thumbnail} 
+          alt={video.title} 
+          className="w-full h-full object-cover opacity-80"
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all"
+            onClick={() => setIsPlaying(!isPlaying)}
+          >
+            {isPlaying ? 
+              <Pause className="h-8 w-8 text-white" /> : 
+              <Play className="h-8 w-8 text-white ml-1" />
+            }
+          </Button>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
           <h3 className="text-white font-bold">{video.title}</h3>
+          <p className="text-white/80 text-sm">{video.client}</p>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const VideoShowcase = () => {
+  const [autoplay, setAutoplay] = useState(true);
+  const [api, setApi] = useState(null);
+  
   useEffect(() => {
+    // Set up intersection observer for animation on scroll
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -100px 0px"
@@ -88,26 +109,58 @@ const VideoShowcase = () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
+  
+  // Set up autoplay functionality
+  useEffect(() => {
+    if (!api || !autoplay) return;
+    
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [api, autoplay]);
 
   return (
-    <section id="work" className="py-20 bg-gradient-to-b from-secondary to-white">
-      <div className="container mx-auto px-4">
+    <section id="work" className="py-24 bg-gradient-to-b from-white via-autthia-blue/5 to-white overflow-hidden">
+      <div className="container mx-auto px-4 relative">
+        {/* Decorative elements */}
+        <div className="absolute -top-20 -left-20 w-64 h-64 bg-autthia-blue rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-autthia-purple rounded-full blur-3xl opacity-20"></div>
+        
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 reveal-on-scroll">
           <span className="gradient-text">Our Work</span>
         </h2>
         
-        <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-16 reveal-on-scroll">
-          Swipe through our collection of authentic content we've created for founders just like you.
+        <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12 reveal-on-scroll">
+          Experience a curated collection of authentic content we've created for founders just like you.
         </p>
         
-        <div className="reveal-on-scroll">
-          <ScrollArea className="w-full h-[500px] rounded-md border p-4">
-            <div className="flex pb-8">
-              {videos.map(video => (
-                <VideoCard key={video.id} video={video} />
+        <div className="max-w-6xl mx-auto reveal-on-scroll">
+          <div className="flex justify-end mb-4">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setAutoplay(!autoplay)}
+              className="text-xs"
+            >
+              {autoplay ? "Pause Autoplay" : "Enable Autoplay"}
+            </Button>
+          </div>
+          
+          <Carousel setApi={setApi} className="w-full">
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {videos.map((video) => (
+                <CarouselItem key={video.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <VideoCard video={video} />
+                </CarouselItem>
               ))}
+            </CarouselContent>
+            <div className="flex justify-center mt-8 gap-4">
+              <CarouselPrevious className="static translate-y-0 h-10 w-10" />
+              <CarouselNext className="static translate-y-0 h-10 w-10" />
             </div>
-          </ScrollArea>
+          </Carousel>
         </div>
       </div>
     </section>
