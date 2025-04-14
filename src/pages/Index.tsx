@@ -9,6 +9,7 @@ import VideoShowcase from "@/components/VideoShowcase";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import TextTestimonials from "@/components/TextTestimonials";
 import StatsShowcase from "@/components/StatsShowcase";
+import WhyDifferent from "@/components/WhyDifferent";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -44,6 +45,7 @@ const Index = () => {
       <ClientLogos />
       <Process />
       <Strategy />
+      <WhyDifferent />
       <StatsShowcase />
       <VideoTestimonials />
       <TextTestimonials />
