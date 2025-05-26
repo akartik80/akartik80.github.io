@@ -1,44 +1,34 @@
-
 import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, MessageCircle, Instagram, Star, Sparkles, Zap, Wand2, CircleDashed, Hexagon, Play } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
-const FloatingElement = ({ 
-  children, 
-  className = "", 
-  animationClass = "animate-float" 
-}) => (
-  <div className={`absolute ${className} ${animationClass}`}>
+const FloatingElement = ({
+  children,
+  className = "",
+  animationClass = "animate-float"
+}) => <div className={`absolute ${className} ${animationClass}`}>
     {children}
-  </div>
-);
-
+  </div>;
 const Hero = () => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -100px 0px"
     };
-    
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
         }
       });
     }, observerOptions);
-    
     const elements = document.querySelectorAll('.reveal-on-scroll');
     elements.forEach(el => observer.observe(el));
-    
     return () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-[#678bd4]/10 via-white to-[#678bd4]/5">
+  return <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-[#678bd4]/10 via-white to-[#678bd4]/5">
       {/* Decorative pattern background */}
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
       
@@ -98,10 +88,10 @@ const Hero = () => {
             <span className="absolute -right-10 bottom-0 text-[#678bd4]/30 opacity-30 text-8xl font-bold">"</span>
           </h1>
           
-          <div className="w-24 h-1 bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 rounded-full mx-auto mb-8"></div>
+          
           
           <div className="text-xl md:text-2xl text-muted-foreground mb-8 reveal-on-scroll max-w-3xl mx-auto space-y-2">
-            <p>We're addicted to turning founder stories into reels that gain <span className="font-bold text-[#678bd4]">visibility</span>, <span className="font-bold text-[#678bd4]">trust</span>, and <span className="font-bold text-[#678bd4]">real authority</span>.</p>
+            <p className="mx-px12">We're addicted to turning founder stories into reels that gain <span className="font-bold text-[#678bd4]">visibility</span>, <span className="font-bold text-[#678bd4]">trust</span>, and <span className="font-bold text-[#678bd4]">real authority</span>.</p>
             <p>Our unique <span className="font-bold text-[#678bd4]">Edutelling™</span> framework blends raw storytelling with educational insights, delivering 10X growth in 90 days.</p>
             <p className="font-semibold">No fluff, just results.</p>
           </div>
@@ -128,9 +118,7 @@ const Hero = () => {
           
           <div className="mt-12 flex justify-center gap-3 reveal-on-scroll">
             <div className="flex -space-x-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className={`w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-[#678bd4] to-[#678bd4]/${60 + i * 10}`}></div>
-              ))}
+              {[1, 2, 3, 4].map(i => <div key={i} className={`w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-[#678bd4] to-[#678bd4]/${60 + i * 10}`}></div>)}
             </div>
             <p className="text-sm text-muted-foreground">Join 300+ founders</p>
           </div>
@@ -151,8 +139,6 @@ const Hero = () => {
           <path fill="rgba(103, 139, 212, 0.2)" fillOpacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
