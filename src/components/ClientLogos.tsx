@@ -14,7 +14,7 @@ const ClientLogos = () => {
       logo: "/lovable-uploads/6932078a-fc68-4a69-9f3a-17f0ba6701b5.png"
     },
     {
-      name: "Starlight",
+      name: "Starglight",
       industry: "Hospitality",
       logo: "/lovable-uploads/bfeb969e-c367-4c73-9615-ac6da31d9269.png"
     },
@@ -36,7 +36,7 @@ const ClientLogos = () => {
     {
       name: "Aarambha",
       industry: "Fintech",
-      logo: "/lovable-uploads/7a18b7bb-9de7-4f8a-b7f9-8937aba84499.png"
+      logo: "/lovable-uploads/dcedbb88-cc30-4617-97c7-25cd2dd42d22.png"
     }
   ];
 
