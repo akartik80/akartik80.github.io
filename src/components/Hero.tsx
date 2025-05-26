@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, MessageCircle, Instagram, Star, Sparkles, Zap, Wand2, CircleDashed, Hexagon, Play } from "lucide-react";
@@ -92,7 +91,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 reveal-on-scroll relative">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 reveal-on-scroll relative">
             <span className="absolute -left-10 top-0 text-[#678bd4]/30 opacity-30 text-8xl font-bold">"</span>
             <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">We Make Founders</span> <span className="bg-gradient-to-r from-[#678bd4]/60 via-[#678bd4] to-[#678bd4]/80 bg-clip-text text-transparent">Impossible to Scroll Past</span> on <span className="bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 bg-clip-text text-transparent">Instagram</span>
             <span className="absolute -right-10 bottom-0 text-[#678bd4]/30 opacity-30 text-8xl font-bold">"</span>
@@ -101,8 +100,7 @@ const Hero = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 rounded-full mx-auto mb-8"></div>
           
           <div className="text-xl md:text-2xl text-muted-foreground mb-8 reveal-on-scroll max-w-3xl mx-auto space-y-2">
-            <p>We're addicted to turning founder stories into reels that gain <span className="font-bold text-[#678bd4]">visibility</span>, <span className="font-bold text-[#678bd4]">trust</span>, and <span className="font-bold text-[#678bd4]">real authority</span>.</p>
-            <p>Our unique <span className="font-bold text-[#678bd4]">Edutelling™</span> framework blends raw storytelling with educational insights, delivering 10X growth in 90 days.</p>
+            <p>We're addicted to turning founder stories into reels that build 10X visibility, trust, and real authority in 90 days—using our unique Edutelling™ framework.</p>
             <p className="font-semibold">No fluff, just results.</p>
           </div>
           
