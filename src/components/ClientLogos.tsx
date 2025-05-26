@@ -9,6 +9,11 @@ const ClientLogos = () => {
       logo: "/lovable-uploads/9e8bdeea-f3bd-467f-a989-6d0f12fb2c06.png"
     },
     {
+      name: "Bonterga",
+      industry: "FMCG",
+      logo: "/lovable-uploads/f2745766-d744-4b42-88e6-6bfbd634f576.png"
+    },
+    {
       name: "Mumsy",
       industry: "Apparel & Fashion",
       logo: "/lovable-uploads/6932078a-fc68-4a69-9f3a-17f0ba6701b5.png"
@@ -29,14 +34,14 @@ const ClientLogos = () => {
       logo: "/lovable-uploads/226a2e93-a46e-47ab-a042-82f1d0e5ff14.png"
     },
     {
-      name: "iBota",
-      industry: "Tech",
-      logo: "/lovable-uploads/6bbb8b0a-a7f4-4e0a-a163-467303d8b35a.png"
-    },
-    {
       name: "Aarambha",
       industry: "Fintech",
       logo: "/lovable-uploads/dcedbb88-cc30-4617-97c7-25cd2dd42d22.png"
+    },
+    {
+      name: "iBota",
+      industry: "Tech",
+      logo: "/lovable-uploads/a0acba37-391c-461d-b129-633b7c2baf6e.png"
     }
   ];
 
