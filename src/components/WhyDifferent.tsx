@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Eye, Users, Instagram, MessageSquare } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 // Data for the four columns
 const differentiators = [
@@ -33,45 +32,24 @@ const differentiators = [
 
 const WhyDifferent = () => {
   return (
-    <section id="why-different" className="py-24 bg-gradient-to-b from-white via-blue-50 to-white overflow-hidden">
+    <section id="why-different" className="py-24 bg-gradient-to-b from-white via-autthia-blue/5 to-white overflow-hidden">
       <div className="container mx-auto px-4 relative">
         {/* Decorative elements */}
-        <div className="absolute -top-20 -left-20 w-64 h-64 bg-blue-200 rounded-full blur-3xl opacity-10"></div>
-        <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full blur-3xl opacity-10" style={{backgroundColor: '#678bd4'}}></div>
+        <div className="absolute -top-20 -left-20 w-64 h-64 bg-autthia-light-purple rounded-full blur-3xl opacity-10"></div>
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-autthia-purple rounded-full blur-3xl opacity-10"></div>
         
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 reveal-on-scroll">
-          <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-            We Make Founders Impossible to Scroll Past on Instagram
-          </span>
+          <span className="gradient-text">Why We're Not Your Typical Agency</span>
         </h2>
         
-        <div className="max-w-4xl mx-auto text-center mb-12 reveal-on-scroll">
-          <p className="text-lg text-muted-foreground mb-8">
-            We're addicted to turning founder stories into reels that gain <span className="font-semibold" style={{color: '#678bd4'}}>visibility</span>, <span className="font-semibold" style={{color: '#678bd4'}}>trust</span> and <span className="font-semibold" style={{color: '#678bd4'}}>real authority</span>. Our unique <span className="font-semibold" style={{color: '#678bd4'}}>Edutelling™</span> framework blends raw storytelling with educational insights, delivering 10X growth in 90 days. No fluff, just results.
+        <div className="max-w-3xl mx-auto text-center mb-16 reveal-on-scroll">
+          <p className="text-lg text-muted-foreground mb-4">
+            Most agencies tell you to "post more," "teach more," or "sell more."
+            We believe true influence comes from stories that educate without preaching—a method we've refined into our signature formula: <span className="font-semibold text-autthia-dark-purple">Eductelling</span>.
           </p>
-          
-          <Button 
-            className="text-white font-semibold px-8 py-3 rounded-lg text-lg hover:opacity-90 transition-all duration-300 mb-12"
-            style={{backgroundColor: '#678bd4'}}
-          >
-            Book Your Free Strategy Session
-          </Button>
-          
-          {/* Video Section */}
-          <div className="max-w-2xl mx-auto mb-16">
-            <div className="relative rounded-xl overflow-hidden shadow-2xl">
-              <div className="aspect-video bg-gray-200 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{backgroundColor: '#678bd4'}}>
-                    <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M8 5v10l7-5z"/>
-                    </svg>
-                  </div>
-                  <p className="text-gray-600 font-medium">Click to upload your video</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <p className="text-lg text-muted-foreground">
+            With over 5 years on Instagram, we've mastered what makes audiences care, connect, and convert. Here's what sets us apart:
+          </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal-on-scroll">
@@ -81,11 +59,11 @@ const WhyDifferent = () => {
               className="bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 group"
             >
               <div className="flex justify-center mb-6">
-                <div className="transition-colors duration-300 animate-float-slow group-hover:opacity-80" style={{color: '#678bd4'}}>
+                <div className="text-autthia-purple group-hover:text-autthia-dark-purple transition-colors duration-300 animate-float-slow">
                   {item.icon}
                 </div>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-center transition-colors duration-300 group-hover:opacity-80" style={{color: '#678bd4'}}>
+              <h3 className="text-xl font-bold mb-3 text-center group-hover:text-autthia-dark-purple transition-colors duration-300">
                 {item.title}
               </h3>
               <p className="text-center text-muted-foreground">
