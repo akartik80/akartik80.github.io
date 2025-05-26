@@ -16,22 +16,22 @@ const ClientLogos = () => {
     {
       name: "Mumsy",
       industry: "Apparel & Fashion",
-      logo: "/lovable-uploads/6932078a-fc68-4a69-9f3a-17f0ba6701b5.png"
+      logo: "/lovable-uploads/1c9f4e6d-fb7d-46a5-b7a7-1f4ea6ffa14e.png"
     },
     {
       name: "Starglight",
       industry: "Hospitality",
-      logo: "/lovable-uploads/bfeb969e-c367-4c73-9615-ac6da31d9269.png"
+      logo: "/lovable-uploads/542081d7-fa80-4adb-bb4a-73bd9a6cda8b.png"
     },
     {
       name: "Nooma",
       industry: "Haircare",
-      logo: "/lovable-uploads/1fa45c13-26fc-4bef-8854-c1633c455546.png"
+      logo: "/lovable-uploads/a2026627-2c55-48da-a052-edba2360d591.png"
     },
     {
       name: "Youphoria",
       industry: "Cosmetics",
-      logo: "/lovable-uploads/226a2e93-a46e-47ab-a042-82f1d0e5ff14.png"
+      logo: "/lovable-uploads/c91c06bb-ac00-4cc6-b253-4017450da9bc.png"
     },
     {
       name: "Aarambha",
@@ -46,10 +46,12 @@ const ClientLogos = () => {
   ];
 
   return (
-    <div className="py-8" style={{ background: '#678bd4' }}>
+    <div className="py-8 bg-gradient-to-br from-[#678bd4]/10 via-white to-[#678bd4]/5">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl text-center mb-8 text-white font-normal md:text-xl">
-          Trusted by the Founders Behind These Iconic Brands
+        <h2 className="text-3xl text-center mb-8 font-normal md:text-xl">
+          <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">
+            Trusted by the Founders Behind These Iconic Brands
+          </span>
         </h2>
         
         <div className="overflow-hidden relative">
@@ -76,8 +78,8 @@ const ClientLogos = () => {
                   />
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-white mb-1 text-sm">{client.name}</p>
-                  <p className="text-white/80 text-xs">{client.industry}</p>
+                  <p className="font-bold mb-1 text-sm bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 bg-clip-text text-transparent">{client.name}</p>
+                  <p className="text-gray-600 text-xs">{client.industry}</p>
                 </div>
               </div>
             ))}
@@ -104,8 +106,8 @@ const ClientLogos = () => {
                   />
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-white mb-1 text-sm">{client.name}</p>
-                  <p className="text-white/80 text-xs">{client.industry}</p>
+                  <p className="font-bold mb-1 text-sm bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 bg-clip-text text-transparent">{client.name}</p>
+                  <p className="text-gray-600 text-xs">{client.industry}</p>
                 </div>
               </div>
             ))}
