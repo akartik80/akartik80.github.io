@@ -5,52 +5,47 @@ const ClientLogos = () => {
   const clients = [
     {
       name: "Alwahda",
-      niche: "Arabic Brand",
+      industry: "Real Estate",
       logo: "/lovable-uploads/9e8bdeea-f3bd-467f-a989-6d0f12fb2c06.png"
     },
     {
-      name: "Diamond Corp",
-      niche: "Luxury Business",
+      name: "Mumsy",
+      industry: "Apparel & Fashion",
       logo: "/lovable-uploads/6932078a-fc68-4a69-9f3a-17f0ba6701b5.png"
     },
     {
-      name: "MyMsy",
-      niche: "Creative Agency",
+      name: "Starlight",
+      industry: "Hospitality",
       logo: "/lovable-uploads/bfeb969e-c367-4c73-9615-ac6da31d9269.png"
     },
     {
-      name: "Starlight",
-      niche: "Hospitality",
+      name: "Nooma",
+      industry: "Haircare",
       logo: "/lovable-uploads/1fa45c13-26fc-4bef-8854-c1633c455546.png"
     },
     {
-      name: "Nooma",
-      niche: "Haircare",
+      name: "Youphoria",
+      industry: "Cosmetics",
       logo: "/lovable-uploads/226a2e93-a46e-47ab-a042-82f1d0e5ff14.png"
     },
     {
-      name: "YouniFy",
-      niche: "Tech Solutions",
+      name: "iBota",
+      industry: "Tech",
       logo: "/lovable-uploads/6bbb8b0a-a7f4-4e0a-a163-467303d8b35a.png"
     },
     {
-      name: "Ibota",
-      niche: "Digital Platform",
+      name: "Aarambha",
+      industry: "Fintech",
       logo: "/lovable-uploads/7a18b7bb-9de7-4f8a-b7f9-8937aba84499.png"
-    },
-    {
-      name: "Aura",
-      niche: "Design Studio",
-      logo: "/lovable-uploads/f2745766-d744-4b42-88e6-6bfbd634f576.png"
     }
   ];
 
   return (
     <div className="py-16" style={{
-      background: `linear-gradient(to right, #678bd420, #678bd420)`
+      background: `linear-gradient(135deg, #678bd4 0%, #8B9DC3 100%)`
     }}>
-      <div className="container mx-auto">
-        <h2 className="text-3xl text-center mb-12 text-gray-800 font-normal md:text-3xl">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl text-center mb-12 text-white font-normal md:text-3xl">
           Trusted by the Founders Behind These Iconic Brands
         </h2>
         
@@ -59,7 +54,7 @@ const ClientLogos = () => {
             {/* First set of logos */}
             {clients.map((client, index) => (
               <div key={`first-${index}`} className="flex flex-col items-center min-w-max">
-                <div className="bg-white rounded-full shadow-lg flex items-center justify-center mb-4 hover:shadow-xl transition-shadow duration-300" style={{
+                <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg flex items-center justify-center mb-4 hover:shadow-xl transition-all duration-300 hover:bg-white" style={{
                   width: '4cm',
                   height: '4cm'
                 }}>
@@ -70,8 +65,8 @@ const ClientLogos = () => {
                   />
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-gray-800 mb-1">{client.name}</p>
-                  <p className="text-gray-600">{client.niche}</p>
+                  <p className="font-bold text-white mb-1">{client.name}</p>
+                  <p className="text-white/80 text-sm">{client.industry}</p>
                 </div>
               </div>
             ))}
@@ -79,7 +74,7 @@ const ClientLogos = () => {
             {/* Duplicate set for seamless animation */}
             {clients.map((client, index) => (
               <div key={`second-${index}`} className="flex flex-col items-center min-w-max">
-                <div className="bg-white rounded-full shadow-lg flex items-center justify-center mb-4 hover:shadow-xl transition-shadow duration-300" style={{
+                <div className="bg-white/90 backdrop-blur-sm rounded-lg shadow-lg flex items-center justify-center mb-4 hover:shadow-xl transition-all duration-300 hover:bg-white" style={{
                   width: '4cm',
                   height: '4cm'
                 }}>
@@ -90,8 +85,8 @@ const ClientLogos = () => {
                   />
                 </div>
                 <div className="text-center">
-                  <p className="font-bold text-gray-800 mb-1">{client.name}</p>
-                  <p className="text-gray-600">{client.niche}</p>
+                  <p className="font-bold text-white mb-1">{client.name}</p>
+                  <p className="text-white/80 text-sm">{client.industry}</p>
                 </div>
               </div>
             ))}
