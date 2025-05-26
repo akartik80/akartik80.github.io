@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, MessageCircle, Instagram, Star, Sparkles, Zap, Wand2, CircleDashed, Hexagon, Play } from "lucide-react";
@@ -100,7 +101,7 @@ const Hero = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 rounded-full mx-auto mb-8"></div>
           
           <div className="text-xl md:text-2xl text-muted-foreground mb-8 reveal-on-scroll max-w-3xl mx-auto space-y-2">
-            <p>We're addicted to turning founder stories into reels that build 10X visibility, trust, and real authority in 90 days—using our unique Edutelling™ framework.</p>
+            <p>We're addicted to turning founder stories into reels that build 10X visibility, trust, and authority in 90 days, using our Edutelling™ framework.</p>
             <p className="font-semibold">No fluff, just results.</p>
           </div>
           
