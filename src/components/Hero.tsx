@@ -84,15 +84,14 @@ const Hero = () => {
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 reveal-on-scroll relative">
             <span className="absolute -left-10 top-0 text-[#678bd4]/30 opacity-30 text-8xl font-bold">"</span>
-            <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">We Make Founders</span> <span className="bg-gradient-to-r from-[#678bd4]/60 via-[#678bd4] to-[#678bd4]/80 bg-clip-text text-transparent">Impossible to Scroll Past</span> on <span className="bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 bg-clip-text text-transparent">Instagram</span>
+            <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">We Make Founders</span> <span className="bg-gradient-to-r from-[#678bd4]/60 via-[#678bd4] to-[#678bd4]/80 bg-clip-text text-transparent">Impossible to Scroll Past</span> <span className="bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 bg-clip-text text-transparent">on</span> <span className="bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 bg-clip-text text-transparent">Instagram</span>
             <span className="absolute -right-10 bottom-0 text-[#678bd4]/30 opacity-30 text-8xl font-bold">"</span>
           </h1>
           
           
           
           <div className="text-xl md:text-2xl text-muted-foreground mb-8 reveal-on-scroll max-w-3xl mx-auto space-y-2">
-            <p>We're addicted to turning founder stories into reels that build 10X visibility, trust, and authority in 90 days, using our Edutelling™ framework.</p>
-            <p className="font-semibold">No fluff, just results.</p>
+            <p>We're addicted to turning founder stories into reels that build 10X visibility, trust, and authority in 90 days, using our Edutelling™ framework. No fluff, just results.</p>
           </div>
           
           <div className="flex flex-col items-center gap-6 reveal-on-scroll">
