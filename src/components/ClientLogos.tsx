@@ -36,7 +36,7 @@ const ClientLogos = () => {
   ];
 
   return (
-    <div className="py-16" style={{ background: `linear-gradient(to right, ${hex678bd4}20, ${hex678bd4}20)` }}>
+    <div className="py-16" style={{ background: `linear-gradient(to right, #678bd420, #678bd420)` }}>
       <div className="container mx-auto">
         <h2 className="text-3xl text-center mb-12 text-gray-800 font-normal md:text-2xl">
           Trusted by the Founders Behind These Iconic Brands
