@@ -75,9 +75,7 @@ const Hero = () => {
           <div className="flex justify-center mb-6">
             <div className="relative">
               <Sparkles className="text-[#678bd4] h-10 w-10 absolute -top-6 -left-6 animate-pulse-soft" />
-              <div className="p-3 bg-white backdrop-blur-md bg-white/70 rounded-full shadow-lg inline-block mb-2">
-                
-              </div>
+              
               
             </div>
           </div>
