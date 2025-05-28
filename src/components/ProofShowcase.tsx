@@ -84,8 +84,7 @@ const ProofShowcase = () => {
           className="flex gap-8 overflow-x-auto scrollbar-hide"
           style={{
             scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-            WebkitScrollbar: { display: 'none' }
+            msOverflowStyle: 'none'
           }}
         >
           {/* Duplicate the array to create seamless loop */}
