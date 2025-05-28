@@ -50,7 +50,7 @@ const Process = () => {
   return <section id="process" className="py-20 bg-gradient-to-b from-white to-secondary">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 reveal-on-scroll">
-          <span className="gradient-text text-[#81a0e3] text-4xl font-bold mx-0 my-0 px-0 py-0 text-center">Scroll-Stopping Founder Reels</span>
+          <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">Scroll-Stopping Founder Reels</span>
         </h2>
         
         <div className="process-container flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 max-w-6xl mx-auto">
