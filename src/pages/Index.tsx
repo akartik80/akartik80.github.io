@@ -10,7 +10,6 @@ import StatsShowcase from "@/components/StatsShowcase";
 import ProofShowcase from "@/components/ProofShowcase";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import FAQ from "@/components/FAQ";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -50,16 +49,15 @@ const Index = () => {
       <Process />
       {/* The Autthia Effect */}
       <StatsShowcase />
+      {/* Scroll-Stopping Founder Reels */}
+      <ProofShowcase />
       {/* With Autthia / Without Autthia */}
       <Comparison />
-      {/* Proof Over Promises */}
-      <ProofShowcase />
       {/* What Founders Are Saying */}
       <VideoTestimonials />
       {/* FAQs section */}
       <FAQ />
-      {/* Secondary sections below FAQ */}
-      <Contact />
+      {/* Footer */}
       <Footer />
     </div>
   );

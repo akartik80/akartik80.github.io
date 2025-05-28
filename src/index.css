@@ -236,6 +236,65 @@
       height: 260px;
     }
   }
+
+  /* Hand-drawn doodle circles */
+  .doodle-circle {
+    position: relative;
+  }
+  
+  .doodle-circle::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -20px;
+    right: -20px;
+    bottom: -15px;
+    border: 3px solid #678bd4;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: doodle-wobble 3s ease-in-out infinite;
+    transform: rotate(-2deg);
+  }
+  
+  .doodle-circle::after {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -18px;
+    right: -18px;
+    bottom: -12px;
+    border: 2px solid #678bd4;
+    border-radius: 45% 55% 52% 48% / 48% 52% 55% 45%;
+    opacity: 0.5;
+    transform: rotate(1deg);
+    animation: doodle-wobble-reverse 4s ease-in-out infinite;
+  }
+
+  @keyframes doodle-wobble {
+    0%, 100% { 
+      transform: rotate(-2deg) scale(1); 
+      border-radius: 50% 48% 52% 50% / 50% 52% 48% 50%;
+    }
+    33% { 
+      transform: rotate(1deg) scale(1.02); 
+      border-radius: 52% 48% 50% 52% / 48% 50% 52% 48%;
+    }
+    66% { 
+      transform: rotate(-1deg) scale(0.98); 
+      border-radius: 48% 52% 48% 50% / 52% 48% 50% 52%;
+    }
+  }
+
+  @keyframes doodle-wobble-reverse {
+    0%, 100% { 
+      transform: rotate(1deg) scale(1); 
+      border-radius: 45% 55% 52% 48% / 48% 52% 55% 45%;
+    }
+    50% { 
+      transform: rotate(-2deg) scale(1.01); 
+      border-radius: 55% 45% 48% 52% / 52% 48% 45% 55%;
+    }
+  }
 }
 
 @layer utilities {
