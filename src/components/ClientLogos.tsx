@@ -36,7 +36,7 @@ const ClientLogos = () => {
   return <div className="py-8 bg-gradient-to-br from-[#678bd4]/10 via-white to-[#678bd4]/5">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl text-center mb-8 font-normal md:text-xl">
-          <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent text-2xl font-medium mx-0 my-0 px-0 py-0">Trusted by the Founders of:</span>
+          <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent mx-0 my-0 px-0 py-0 font-semibold text-lg">Trusted by the Founders of:</span>
         </h2>
         
         <div className="overflow-hidden relative">
