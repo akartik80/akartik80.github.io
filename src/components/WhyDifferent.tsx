@@ -9,28 +9,28 @@ const differentiators = [{
   title: "We Know Audience Psychology (Deeply)",
   description: "We decode how attention works online—and create content that keeps it.",
   bgColor: "bg-blue-100",
-  position: "top-8 left-8"
+  position: "top-8 left-4"
 }, {
   id: 2,
   icon: <Users className="h-8 w-8" />,
   title: "We Work With Founders (Only)",
   description: "Our clients are all founders, so we get your pace, your pressure, and your purpose.",
   bgColor: "bg-purple-100",
-  position: "top-16 right-12"
+  position: "top-20 left-1/4"
 }, {
   id: 3,
   icon: <Instagram className="h-8 w-8" />,
   title: "We Focus Only on Instagram (And Dominate It)",
   description: "Instagram isn't one of many things we do—it's the only thing we do.",
   bgColor: "bg-pink-100",
-  position: "top-32 left-16"
+  position: "top-4 left-2/4"
 }, {
   id: 4,
   icon: <Zap className="h-8 w-8" />,
   title: "We Make the Process Addictive (In a Good Way)",
   description: "We mix storytelling and education so you come across as human and credible—never preachy.",
   bgColor: "bg-cyan-100",
-  position: "top-48 right-8"
+  position: "top-16 right-4"
 }];
 
 const WhyDifferent = () => {
@@ -52,30 +52,37 @@ const WhyDifferent = () => {
           </p>
         </div>
         
-        {/* Desktop: Staggered Layout */}
-        <div className="hidden md:block relative min-h-[600px] reveal-on-scroll">
-          {differentiators.map((item, index) => (
-            <div 
-              key={item.id} 
-              className={`absolute ${item.position} circle-cloud-card ${item.bgColor} group animate-float-slow`}
-              style={{ 
-                animationDelay: `${index * 0.5}s`,
-                animationDuration: `${6 + index}s`
-              }}
-            >
-              <div className="flex flex-col items-center text-center p-8 h-full justify-center">
-                <div className="text-autthia-purple group-hover:text-autthia-dark-purple transition-colors duration-300 mb-4">
-                  {item.icon}
+        {/* Desktop: Horizontal Layout with Vertical Variance */}
+        <div className="hidden md:block relative min-h-[400px] reveal-on-scroll">
+          <div className="flex justify-between items-start max-w-6xl mx-auto relative">
+            {differentiators.map((item, index) => {
+              // Define vertical offsets for each card to create floating effect
+              const verticalOffsets = ['translate-y-4', '-translate-y-2', 'translate-y-6', '-translate-y-4'];
+              
+              return (
+                <div 
+                  key={item.id} 
+                  className={`circle-cloud-card ${item.bgColor} group animate-float-slow ${verticalOffsets[index]}`}
+                  style={{ 
+                    animationDelay: `${index * 0.5}s`,
+                    animationDuration: `${6 + index}s`
+                  }}
+                >
+                  <div className="flex flex-col items-center text-center p-8 h-full justify-center">
+                    <div className="text-autthia-purple group-hover:text-autthia-dark-purple transition-colors duration-300 mb-4">
+                      {item.icon}
+                    </div>
+                    <h3 className="text-lg font-bold mb-3 group-hover:text-autthia-dark-purple transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold mb-3 group-hover:text-autthia-dark-purple transition-colors duration-300">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          ))}
+              );
+            })}
+          </div>
         </div>
         
         {/* Mobile: Vertical Stack */}
