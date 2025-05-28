@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 
 const Strategy = () => {
@@ -65,21 +64,24 @@ const Strategy = () => {
       number: "1",
       heading: "Book a Free Strategy Call",
       subheading: "One quick call to map your brand voice, vision, and content game plan.",
-      bgColor: "#c1caf3"
+      bgColor: "#c1caf3",
+      cloudClass: "cloud-card-1"
     },
     {
       id: 2,
       number: "2", 
       heading: "Two Hours. That's All You Give Us.",
       subheading: "Founders don't have time — that's why it only takes 2 hours. (Less than an episode of 'Friends'.)",
-      bgColor: "#9eb5ee"
+      bgColor: "#9eb5ee",
+      cloudClass: "cloud-card-2"
     },
     {
       id: 3,
       number: "3",
       heading: "We Do Everything Else", 
       subheading: "Research. Strategy. Scripts. Edits. Publishing. And everything in between. We'll make sure your personal brand shows up everywhere.",
-      bgColor: "#88acf1"
+      bgColor: "#88acf1",
+      cloudClass: "cloud-card-3"
     }
   ];
 
@@ -91,95 +93,41 @@ const Strategy = () => {
         </h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
-          {/* Card 1 - Left */}
-          <div 
-            ref={leftCardRef} 
-            className="how-it-works-card group" 
-            style={{
-              transform: 'translate(-300px, -250px) scale(0.6) rotate(-20deg)',
-              opacity: '0',
-              transition: 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-            }}
-          >
+          {cards.map((card, index) => (
             <div 
-              className="cloud-card relative"
-              style={{ backgroundColor: cards[0].bgColor }}
+              key={card.id}
+              ref={index === 0 ? leftCardRef : index === 1 ? centerCardRef : rightCardRef}
+              className="how-it-works-card group" 
+              style={{
+                transform: index === 0 
+                  ? 'translate(-300px, -250px) scale(0.6) rotate(-20deg)' 
+                  : index === 1 
+                  ? 'translateY(150px) scale(0.6) rotate(5deg)'
+                  : 'translate(300px, 250px) scale(0.6) rotate(20deg)',
+                opacity: '0',
+                transition: 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+              }}
             >
-              <div className="cloud-puff-1" style={{ backgroundColor: cards[0].bgColor }}></div>
-              <div className="cloud-puff-2" style={{ backgroundColor: cards[0].bgColor }}></div>
-              <div className="cloud-puff-3" style={{ backgroundColor: cards[0].bgColor }}></div>
-              <div className="cloud-puff-4" style={{ backgroundColor: cards[0].bgColor }}></div>
-              
-              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg z-10">
-                {cards[0].number}
-              </div>
-              
-              <div className="relative z-10 text-center">
-                <h3 className="text-lg font-bold mb-3 text-gray-800">{cards[0].heading}</h3>
-                <p className="text-sm text-gray-700 leading-relaxed">{cards[0].subheading}</p>
+              <div 
+                className={`${card.cloudClass} relative`}
+                style={{ backgroundColor: card.bgColor }}
+              >
+                <div className="cloud-puff-1" style={{ backgroundColor: card.bgColor }}></div>
+                <div className="cloud-puff-2" style={{ backgroundColor: card.bgColor }}></div>
+                <div className="cloud-puff-3" style={{ backgroundColor: card.bgColor }}></div>
+                <div className="cloud-puff-4" style={{ backgroundColor: card.bgColor }}></div>
+                
+                <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/90 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg z-10">
+                  {card.number}
+                </div>
+                
+                <div className="relative z-10 text-center">
+                  <h3 className="text-lg font-bold mb-3 text-gray-800 leading-tight">{card.heading}</h3>
+                  <p className="text-sm text-gray-700 leading-relaxed">{card.subheading}</p>
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* Card 2 - Center */}
-          <div 
-            ref={centerCardRef} 
-            className="how-it-works-card group" 
-            style={{
-              transform: 'translateY(150px) scale(0.6) rotate(5deg)',
-              opacity: '0',
-              transition: 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-            }}
-          >
-            <div 
-              className="cloud-card relative"
-              style={{ backgroundColor: cards[1].bgColor }}
-            >
-              <div className="cloud-puff-1" style={{ backgroundColor: cards[1].bgColor }}></div>
-              <div className="cloud-puff-2" style={{ backgroundColor: cards[1].bgColor }}></div>
-              <div className="cloud-puff-3" style={{ backgroundColor: cards[1].bgColor }}></div>
-              <div className="cloud-puff-4" style={{ backgroundColor: cards[1].bgColor }}></div>
-              
-              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg z-10">
-                {cards[1].number}
-              </div>
-              
-              <div className="relative z-10 text-center">
-                <h3 className="text-lg font-bold mb-3 text-gray-800">{cards[1].heading}</h3>
-                <p className="text-sm text-gray-700 leading-relaxed">{cards[1].subheading}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 3 - Right */}
-          <div 
-            ref={rightCardRef} 
-            className="how-it-works-card group" 
-            style={{
-              transform: 'translate(300px, 250px) scale(0.6) rotate(20deg)',
-              opacity: '0',
-              transition: 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-            }}
-          >
-            <div 
-              className="cloud-card relative"
-              style={{ backgroundColor: cards[2].bgColor }}
-            >
-              <div className="cloud-puff-1" style={{ backgroundColor: cards[2].bgColor }}></div>
-              <div className="cloud-puff-2" style={{ backgroundColor: cards[2].bgColor }}></div>
-              <div className="cloud-puff-3" style={{ backgroundColor: cards[2].bgColor }}></div>
-              <div className="cloud-puff-4" style={{ backgroundColor: cards[2].bgColor }}></div>
-              
-              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg z-10">
-                {cards[2].number}
-              </div>
-              
-              <div className="relative z-10 text-center">
-                <h3 className="text-lg font-bold mb-3 text-gray-800">{cards[2].heading}</h3>
-                <p className="text-sm text-gray-700 leading-relaxed">{cards[2].subheading}</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
