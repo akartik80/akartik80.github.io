@@ -39,18 +39,13 @@ const Hero = () => {
       
       {/* Background Emojis */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <span className="absolute text-2xl opacity-30" style={{top: '25%', left: '8%'}}>🚀</span>
-        <span className="absolute text-xl opacity-25" style={{top: '35%', right: '12%'}}>💡</span>
-        <span className="absolute text-2xl opacity-30" style={{bottom: '40%', left: '15%'}}>⚡</span>
-        <span className="absolute text-xl opacity-25" style={{top: '45%', left: '85%'}}>🎯</span>
-        <span className="absolute text-2xl opacity-30" style={{bottom: '25%', right: '20%'}}>📸</span>
-        <span className="absolute text-xl opacity-25" style={{top: '60%', left: '5%'}}>✨</span>
-        <span className="absolute text-2xl opacity-30" style={{bottom: '60%', right: '8%'}}>🔥</span>
-        <span className="absolute text-xl opacity-25" style={{top: '70%', right: '85%'}}>📈</span>
-        <span className="absolute text-2xl opacity-30" style={{bottom: '45%', left: '75%'}}>💎</span>
-        <span className="absolute text-xl opacity-25" style={{top: '80%', left: '25%'}}>🎬</span>
-        <span className="absolute text-2xl opacity-30" style={{bottom: '30%', right: '60%'}}>🌟</span>
-        <span className="absolute text-xl opacity-25" style={{top: '40%', left: '40%'}}>🎨</span>
+        <span className="absolute text-2xl opacity-30 animate-float" style={{bottom: '40%', left: '15%'}}>⚡</span>
+        <span className="absolute text-2xl opacity-30 animate-float-slow" style={{bottom: '25%', right: '20%'}}>📸</span>
+        <span className="absolute text-xl opacity-25 animate-float" style={{top: '60%', left: '5%'}}>✨</span>
+        <span className="absolute text-2xl opacity-30 animate-float-fast" style={{bottom: '60%', right: '8%'}}>🔥</span>
+        <span className="absolute text-2xl opacity-30 animate-float" style={{bottom: '45%', left: '75%'}}>💎</span>
+        <span className="absolute text-xl opacity-25 animate-float-slow" style={{top: '80%', left: '25%'}}>🎬</span>
+        <span className="absolute text-2xl opacity-30 animate-float-fast" style={{bottom: '30%', right: '60%'}}>🌟</span>
       </div>
       
       {/* Decorative elements with brand color */}
@@ -84,10 +79,6 @@ const Hero = () => {
         <MessageCircle className="h-6 w-6 text-[#678bd4]" />
       </FloatingElement>
       
-      <FloatingElement className="hidden md:block top-1/3 left-1/5 bg-white rounded-xl shadow-lg p-2 rotate-12 backdrop-blur-sm bg-white/70" animationClass="animate-float-fast">
-        <Instagram className="h-6 w-6 text-[#678bd4]" />
-      </FloatingElement>
-      
       {/* Creative shape behind content */}
       <div className="absolute w-full max-w-4xl h-[500px] bg-gradient-to-br from-[#678bd4]/10 via-[#678bd4]/15 to-[#678bd4]/20 rounded-[30%_70%_70%_30%/30%_40%_60%_70%] z-0 animate-pulse-soft"></div>
       
@@ -108,6 +99,9 @@ const Hero = () => {
             <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent"> Impossible to Scroll Past on </span>
             <span className="bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 bg-clip-text text-transparent relative inline-block">
               <span className="doodle-circle">Instagram</span>
+              <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 bg-white rounded-xl shadow-lg p-1 animate-float">
+                <Instagram className="h-5 w-5 text-[#678bd4]" />
+              </div>
             </span>
             <span className="absolute -right-10 bottom-0 text-[#678bd4]/30 opacity-30 text-8xl font-bold">"</span>
           </h1>
