@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 
 const Strategy = () => {
@@ -64,24 +65,21 @@ const Strategy = () => {
       number: "1",
       heading: "Book a Free Strategy Call",
       subheading: "One quick call to map your brand voice, vision, and content game plan.",
-      bgColor: "#c1caf3",
-      cloudClass: "cloud-card-1"
+      bgColor: "#c1caf3"
     },
     {
       id: 2,
       number: "2", 
       heading: "Two Hours. That's All You Give Us.",
       subheading: "Founders don't have time — that's why it only takes 2 hours. (Less than an episode of 'Friends'.)",
-      bgColor: "#9eb5ee",
-      cloudClass: "cloud-card-2"
+      bgColor: "#9eb5ee"
     },
     {
       id: 3,
       number: "3",
       heading: "We Do Everything Else", 
       subheading: "Research. Strategy. Scripts. Edits. Publishing. And everything in between. We'll make sure your personal brand shows up everywhere.",
-      bgColor: "#88acf1",
-      cloudClass: "cloud-card-3"
+      bgColor: "#88acf1"
     }
   ];
 
@@ -93,41 +91,80 @@ const Strategy = () => {
         </h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
-          {cards.map((card, index) => (
+          {/* Card 1 - Left */}
+          <div 
+            ref={leftCardRef} 
+            className="how-it-works-card group" 
+            style={{
+              transform: 'translate(-300px, -250px) scale(0.6) rotate(-20deg)',
+              opacity: '0',
+              transition: 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+            }}
+          >
             <div 
-              key={card.id}
-              ref={index === 0 ? leftCardRef : index === 1 ? centerCardRef : rightCardRef}
-              className="how-it-works-card group" 
-              style={{
-                transform: index === 0 
-                  ? 'translate(-300px, -250px) scale(0.6) rotate(-20deg)' 
-                  : index === 1 
-                  ? 'translateY(150px) scale(0.6) rotate(5deg)'
-                  : 'translate(300px, 250px) scale(0.6) rotate(20deg)',
-                opacity: '0',
-                transition: 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-              }}
+              className="cloud-card p-8 h-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden"
+              style={{ backgroundColor: cards[0].bgColor }}
             >
-              <div 
-                className={`${card.cloudClass} relative`}
-                style={{ backgroundColor: card.bgColor }}
-              >
-                <div className="cloud-puff-1" style={{ backgroundColor: card.bgColor }}></div>
-                <div className="cloud-puff-2" style={{ backgroundColor: card.bgColor }}></div>
-                <div className="cloud-puff-3" style={{ backgroundColor: card.bgColor }}></div>
-                <div className="cloud-puff-4" style={{ backgroundColor: card.bgColor }}></div>
-                
-                <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/90 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg z-10">
-                  {card.number}
-                </div>
-                
-                <div className="relative z-10 text-center">
-                  <h3 className="text-lg font-bold mb-3 text-gray-800 leading-tight">{card.heading}</h3>
-                  <p className="text-sm text-gray-700 leading-relaxed">{card.subheading}</p>
-                </div>
+              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg">
+                {cards[0].number}
               </div>
+              <div className="mt-16">
+                <h3 className="text-xl font-bold mb-4 text-gray-800">{cards[0].heading}</h3>
+                <p className="text-gray-700 leading-relaxed">{cards[0].subheading}</p>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
             </div>
-          ))}
+          </div>
+
+          {/* Card 2 - Center */}
+          <div 
+            ref={centerCardRef} 
+            className="how-it-works-card group" 
+            style={{
+              transform: 'translateY(150px) scale(0.6) rotate(5deg)',
+              opacity: '0',
+              transition: 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+            }}
+          >
+            <div 
+              className="cloud-card p-8 h-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden"
+              style={{ backgroundColor: cards[1].bgColor }}
+            >
+              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg">
+                {cards[1].number}
+              </div>
+              <div className="mt-16">
+                <h3 className="text-xl font-bold mb-4 text-gray-800">{cards[1].heading}</h3>
+                <p className="text-gray-700 leading-relaxed">{cards[1].subheading}</p>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
+            </div>
+          </div>
+
+          {/* Card 3 - Right */}
+          <div 
+            ref={rightCardRef} 
+            className="how-it-works-card group" 
+            style={{
+              transform: 'translate(300px, 250px) scale(0.6) rotate(20deg)',
+              opacity: '0',
+              transition: 'all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+            }}
+          >
+            <div 
+              className="cloud-card p-8 h-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden"
+              style={{ backgroundColor: cards[2].bgColor }}
+            >
+              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg">
+                {cards[2].number}
+              </div>
+              <div className="mt-16">
+                <h3 className="text-xl font-bold mb-4 text-gray-800">{cards[2].heading}</h3>
+                <p className="text-gray-700 leading-relaxed">{cards[2].subheading}</p>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
