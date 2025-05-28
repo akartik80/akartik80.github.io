@@ -1,129 +1,155 @@
-import React, { useEffect } from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Eye, TrendingUp, Users, Instagram, Twitter, Linkedin, Activity, Zap, BarChart } from 'lucide-react';
 
-// Mock stats data
-const stats = [{
-  id: 1,
-  title: "Average Reach Increase",
-  value: "6.8x",
-  description: "Growth in audience reach",
-  icon: <TrendingUp className="h-12 w-12 text-autthia-dark-purple" />,
-  color: "from-autthia-purple to-autthia-dark-purple"
-}, {
-  id: 2,
-  title: "Average Views",
-  value: "240K+",
-  description: "Monthly content views",
-  icon: <Eye className="h-12 w-12 text-autthia-blue" />,
-  color: "from-autthia-blue to-sky-500"
-}, {
-  id: 3,
-  title: "Engagement Rate",
-  value: "12.4%",
-  description: "Industry avg. is 3.2%",
-  icon: <Activity className="h-12 w-12 text-autthia-pink" />,
-  color: "from-autthia-pink to-pink-500"
-}];
+import React, { useEffect, useState, useRef } from 'react';
+import { Instagram, Diamond, Star, Smile } from 'lucide-react';
 
-// Mock platform stats
-const platformStats = [{
-  platform: "Instagram",
-  stats: [45, 62, 81, 95, 110, 135, 150, 180, 210, 240, 280, 320],
-  icon: <Instagram className="h-6 w-6" />,
-  color: "bg-gradient-to-r from-purple-500 to-pink-500"
-}, {
-  platform: "Twitter",
-  stats: [20, 35, 45, 60, 75, 95, 120, 150, 170, 200, 230, 260],
-  icon: <Twitter className="h-6 w-6" />,
-  color: "bg-gradient-to-r from-blue-400 to-blue-600"
-}, {
-  platform: "LinkedIn",
-  stats: [30, 45, 55, 70, 85, 105, 125, 145, 170, 200, 250, 280],
-  icon: <Linkedin className="h-6 w-6" />,
-  color: "bg-gradient-to-r from-blue-600 to-blue-800"
-}];
+const stats = [
+  {
+    id: 1,
+    number: "6+",
+    label: "Countries Host Autthia's Clients",
+    countTo: 6,
+    suffix: "+"
+  },
+  {
+    id: 2,
+    number: "10x",
+    label: "Growth in 90 Days",
+    countTo: 10,
+    suffix: "x"
+  },
+  {
+    id: 3,
+    number: "92%",
+    label: "Clients Renew After 3 Months",
+    countTo: 92,
+    suffix: "%"
+  },
+  {
+    id: 4,
+    number: "100%",
+    label: "Done-For-You Content Engine",
+    countTo: 100,
+    suffix: "%"
+  },
+  {
+    id: 5,
+    number: "200%",
+    label: "Increase in Client Smiles (Confirmed via Slack) 😉",
+    countTo: 200,
+    suffix: "%"
+  }
+];
 
-// Mock follower growth
-const followerGrowth = [{
-  month: "Jan",
-  followers: 1200
-}, {
-  month: "Feb",
-  followers: 1800
-}, {
-  month: "Mar",
-  followers: 2400
-}, {
-  month: "Apr",
-  followers: 3600
-}, {
-  month: "May",
-  followers: 5000
-}, {
-  month: "Jun",
-  followers: 8000
-}, {
-  month: "Jul",
-  followers: 12000
-}, {
-  month: "Aug",
-  followers: 18000
-}, {
-  month: "Sep",
-  followers: 24000
-}, {
-  month: "Oct",
-  followers: 35000
-}, {
-  month: "Nov",
-  followers: 47000
-}, {
-  month: "Dec",
-  followers: 62000
-}];
+const FloatingIcon = ({ Icon, className }: { Icon: React.ComponentType<any>, className: string }) => (
+  <Icon className={`absolute text-autthia-purple/20 ${className}`} size={20} />
+);
 
-// Sample screenshot data
-const screenshots = [{
-  id: 1,
-  title: "Instagram Growth",
-  image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7",
-  stats: "324k views"
-}, {
-  id: 2,
-  title: "Content Performance",
-  image: "https://images.unsplash.com/photo-1611162616305-c69b3037c7bb",
-  stats: "87% engagement"
-}, {
-  id: 3,
-  title: "Audience Demographics",
-  image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-  stats: "45 countries"
-}];
-const StatCard = ({
-  stat
-}) => <Card className="border-none shadow-lg hover:shadow-xl transition-all bg-white">
-    
-  </Card>;
+const StatCard = ({ stat, index }: { stat: typeof stats[0], index: number }) => {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const statRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true);
+            
+            // Count-up animation
+            const duration = 2000; // 2 seconds
+            const steps = 60;
+            const increment = stat.countTo / steps;
+            let currentCount = 0;
+            
+            const timer = setInterval(() => {
+              currentCount += increment;
+              if (currentCount >= stat.countTo) {
+                setCount(stat.countTo);
+                clearInterval(timer);
+              } else {
+                setCount(Math.floor(currentCount));
+              }
+            }, duration / steps);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (statRef.current) {
+      observer.observe(statRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [stat.countTo, hasAnimated]);
+
+  return (
+    <div 
+      ref={statRef}
+      className="text-center reveal-on-scroll"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <div className="text-4xl lg:text-5xl font-bold gradient-text mb-2">
+        {count}{stat.suffix}
+      </div>
+      <p className="text-gray-600 text-sm lg:text-base font-medium leading-relaxed max-w-[200px] mx-auto">
+        {stat.label}
+      </p>
+    </div>
+  );
+};
+
 const StatsShowcase = () => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -100px 0px"
     };
-    const observer = new IntersectionObserver(entries => {
+    
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
         }
       });
     }, observerOptions);
+    
     const elements = document.querySelectorAll('.reveal-on-scroll');
     elements.forEach(el => observer.observe(el));
+    
     return () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
-  return;
+
+  return (
+    <section className="py-24 relative overflow-hidden bg-gradient-to-r from-autthia-purple/5 via-white to-autthia-blue/5">
+      {/* Floating Background Icons */}
+      <FloatingIcon Icon={Instagram} className="top-10 left-[10%] animate-float" />
+      <FloatingIcon Icon={Diamond} className="top-20 right-[15%] animate-float-slow" />
+      <FloatingIcon Icon={Star} className="bottom-20 left-[20%] animate-float-fast" />
+      <FloatingIcon Icon={Smile} className="bottom-10 right-[25%] animate-float" />
+      <FloatingIcon Icon={Instagram} className="top-32 right-[40%] animate-float-slow" />
+      <FloatingIcon Icon={Diamond} className="bottom-32 left-[45%] animate-float-fast" />
+      <FloatingIcon Icon={Star} className="top-16 left-[60%] animate-float" />
+      <FloatingIcon Icon={Smile} className="bottom-16 right-[70%] animate-float-slow" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Title */}
+        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-16 gradient-text reveal-on-scroll">
+          The Autthia Effect
+        </h2>
+
+        {/* Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">
+          {stats.map((stat, index) => (
+            <StatCard key={stat.id} stat={stat} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
+
 export default StatsShowcase;

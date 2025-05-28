@@ -6,7 +6,6 @@ import ClientLogos from "@/components/ClientLogos";
 import Process from "@/components/Process";
 import Strategy from "@/components/Strategy";
 import VideoShowcase from "@/components/VideoShowcase";
-import VideoTestimonials from "@/components/VideoTestimonials";
 import TextTestimonials from "@/components/TextTestimonials";
 import StatsShowcase from "@/components/StatsShowcase";
 import WhyDifferent from "@/components/WhyDifferent";
@@ -49,7 +48,6 @@ const Index = () => {
       <WhyDifferent />
       <StatsShowcase />
       <Comparison />
-      <VideoTestimonials />
       <TextTestimonials />
       <VideoShowcase />
       <FAQ />
