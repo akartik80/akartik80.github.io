@@ -1,54 +1,45 @@
 import React, { useEffect } from 'react';
-
-const processSteps = [
-  {
-    id: 1,
-    title: "ELLIOT HACKER",
-    views: "2.4M+ Views",
-    thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-    angle: "-12deg"
-  },
-  {
-    id: 2,
-    title: "REID HOFFMAN",
-    subtitle: "Co-founder LinkedIn",
-    views: "3.2M+ Views",
-    thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    angle: "0deg"
-  },
-  {
-    id: 3,
-    title: "THEY JUST",
-    subtitle: "ACQUIRED FM",
-    views: "4.9M+ Views",
-    thumbnail: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-    angle: "12deg"
-  },
-  {
-    id: 4,
-    title: "STARTUP GROWTH",
-    subtitle: "Behind the Scenes",
-    views: "1.8M+ Views",
-    thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
-    angle: "-8deg"
-  },
-  {
-    id: 5,
-    title: "TECH INSIGHTS",
-    subtitle: "Industry Leaders",
-    views: "3.6M+ Views",
-    thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43",
-    angle: "8deg"
-  }
-];
-
+const processSteps = [{
+  id: 1,
+  title: "ELLIOT HACKER",
+  views: "2.4M+ Views",
+  thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+  angle: "-12deg"
+}, {
+  id: 2,
+  title: "REID HOFFMAN",
+  subtitle: "Co-founder LinkedIn",
+  views: "3.2M+ Views",
+  thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+  angle: "0deg"
+}, {
+  id: 3,
+  title: "THEY JUST",
+  subtitle: "ACQUIRED FM",
+  views: "4.9M+ Views",
+  thumbnail: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+  angle: "12deg"
+}, {
+  id: 4,
+  title: "STARTUP GROWTH",
+  subtitle: "Behind the Scenes",
+  views: "1.8M+ Views",
+  thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
+  angle: "-8deg"
+}, {
+  id: 5,
+  title: "TECH INSIGHTS",
+  subtitle: "Industry Leaders",
+  views: "3.6M+ Views",
+  thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43",
+  angle: "8deg"
+}];
 const Process = () => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -100px 0px"
     };
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -64,20 +55,16 @@ const Process = () => {
         }
       });
     }, observerOptions);
-
     const elements = document.querySelectorAll('.process-container');
     elements.forEach(el => observer.observe(el));
-
     return () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  return (
-    <section id="process" className="py-20 bg-gradient-to-b from-white to-secondary">
+  return <section id="process" className="py-20 bg-gradient-to-b from-white to-secondary">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 reveal-on-scroll">
-          <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-4xl">
+          <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-5xl">
             Scroll-Stopping Founder Reels
           </span>
         </h2>
@@ -85,26 +72,17 @@ const Process = () => {
         <div className="process-container max-w-6xl mx-auto">
           {/* Top row - 3 phones */}
           <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 mb-12">
-            {processSteps.slice(0, 3).map((step, index) => (
-              <div
-                key={step.id}
-                className="process-item reveal-on-scroll opacity-0 group"
-                style={{
-                  transform: `rotate(${step.angle})`,
-                  animationDelay: `${index * 0.2}s`
-                }}
-              >
+            {processSteps.slice(0, 3).map((step, index) => <div key={step.id} className="process-item reveal-on-scroll opacity-0 group" style={{
+            transform: `rotate(${step.angle})`,
+            animationDelay: `${index * 0.2}s`
+          }}>
                 {/* Phone mockup container */}
                 <div className="relative w-64 h-[450px] bg-black rounded-[2.5rem] p-2 shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-3xl group-hover:rotate-0">
                   {/* Phone screen */}
                   <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
                     {/* Video content */}
                     <div className="absolute inset-0">
-                      <img 
-                        src={step.thumbnail} 
-                        alt={step.title} 
-                        className="w-full h-full object-cover" 
-                      />
+                      <img src={step.thumbnail} alt={step.title} className="w-full h-full object-cover" />
                       
                       {/* Overlay gradient */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20"></div>
@@ -149,32 +127,22 @@ const Process = () => {
                 {/* Floating elements for 3D effect */}
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-autthia-purple/20 rounded-full blur-sm animate-float-slow"></div>
                 <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-autthia-blue/20 rounded-full blur-sm animate-float-fast"></div>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           {/* Bottom row - 2 phones staggered */}
           <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-32">
-            {processSteps.slice(3, 5).map((step, index) => (
-              <div
-                key={step.id}
-                className="process-item reveal-on-scroll opacity-0 group"
-                style={{
-                  transform: `rotate(${step.angle})`,
-                  animationDelay: `${(index + 3) * 0.2}s`
-                }}
-              >
+            {processSteps.slice(3, 5).map((step, index) => <div key={step.id} className="process-item reveal-on-scroll opacity-0 group" style={{
+            transform: `rotate(${step.angle})`,
+            animationDelay: `${(index + 3) * 0.2}s`
+          }}>
                 {/* Phone mockup container */}
                 <div className="relative w-64 h-[450px] bg-black rounded-[2.5rem] p-2 shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-3xl group-hover:rotate-0">
                   {/* Phone screen */}
                   <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
                     {/* Video content */}
                     <div className="absolute inset-0">
-                      <img 
-                        src={step.thumbnail} 
-                        alt={step.title} 
-                        className="w-full h-full object-cover" 
-                      />
+                      <img src={step.thumbnail} alt={step.title} className="w-full h-full object-cover" />
                       
                       {/* Overlay gradient */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20"></div>
@@ -219,13 +187,10 @@ const Process = () => {
                 {/* Floating elements for 3D effect */}
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-autthia-purple/20 rounded-full blur-sm animate-float-slow"></div>
                 <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-autthia-blue/20 rounded-full blur-sm animate-float-fast"></div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Process;
