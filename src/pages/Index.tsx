@@ -7,7 +7,6 @@ import WhyDifferent from "@/components/WhyDifferent";
 import Process from "@/components/Process";
 import Comparison from "@/components/Comparison";
 import StatsShowcase from "@/components/StatsShowcase";
-import VideoShowcase from "@/components/VideoShowcase";
 import ProofShowcase from "@/components/ProofShowcase";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import FAQ from "@/components/FAQ";
@@ -51,8 +50,6 @@ const Index = () => {
       <Process />
       {/* The Autthia Effect */}
       <StatsShowcase />
-      {/* Scroll-Stopping Founder Reels */}
-      <VideoShowcase />
       {/* With Autthia / Without Autthia */}
       <Comparison />
       {/* Proof Over Promises */}
