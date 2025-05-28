@@ -63,7 +63,7 @@ const WhyDifferent = () => {
                     <div className="text-autthia-purple group-hover:text-autthia-dark-purple transition-colors duration-300 mb-4">
                       {item.icon}
                     </div>
-                    <h3 className="text-lg font-bold mb-3 group-hover:text-autthia-dark-purple transition-colors duration-300">
+                    <h3 className="mb-3 group-hover:text-autthia-dark-purple transition-colors duration-300 text-xl font-bold">
                       {item.title}
                     </h3>
                     <p className="text-sm text-muted-foreground">
