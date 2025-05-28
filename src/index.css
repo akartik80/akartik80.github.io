@@ -112,6 +112,10 @@
     @apply bg-gradient-to-r from-autthia-purple to-autthia-dark-purple bg-clip-text text-transparent;
   }
   
+  .glow-text {
+    text-shadow: 0 0 20px rgba(126, 105, 171, 0.6), 0 0 40px rgba(126, 105, 171, 0.4), 0 0 60px rgba(126, 105, 171, 0.2);
+  }
+  
   .autthia-card {
     @apply bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl;
   }
