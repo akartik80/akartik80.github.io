@@ -3,18 +3,16 @@ import React, { useEffect } from 'react';
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ClientLogos from "@/components/ClientLogos";
-import Process from "@/components/Process";
-import Strategy from "@/components/Strategy";
-import VideoShowcase from "@/components/VideoShowcase";
-import TextTestimonials from "@/components/TextTestimonials";
-import StatsShowcase from "@/components/StatsShowcase";
 import WhyDifferent from "@/components/WhyDifferent";
+import Process from "@/components/Process";
 import Comparison from "@/components/Comparison";
+import StatsShowcase from "@/components/StatsShowcase";
+import VideoShowcase from "@/components/VideoShowcase";
+import ProofShowcase from "@/components/ProofShowcase";
+import VideoTestimonials from "@/components/VideoTestimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import ProofShowcase from "@/components/ProofShowcase";
-import VideoTestimonials from "@/components/VideoTestimonials";
 
 const Index = () => {
   useEffect(() => {
@@ -43,18 +41,27 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
+      {/* Hero Section */}
       <Hero />
+      {/* Trusted By Section */}
       <ClientLogos />
-      <Process />
-      <Strategy />
+      {/* We're Not Your Typical Agency */}
       <WhyDifferent />
+      {/* How It Works */}
+      <Process />
+      {/* The Autthia Effect */}
       <StatsShowcase />
-      <Comparison />
-      <TextTestimonials />
+      {/* Scroll-Stopping Founder Reels */}
       <VideoShowcase />
+      {/* With Autthia / Without Autthia */}
+      <Comparison />
+      {/* Proof Over Promises */}
       <ProofShowcase />
+      {/* What Founders Are Saying */}
       <VideoTestimonials />
+      {/* FAQs section */}
       <FAQ />
+      {/* Secondary sections below FAQ */}
       <Contact />
       <Footer />
     </div>
