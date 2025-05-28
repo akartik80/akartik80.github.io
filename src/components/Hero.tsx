@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, MessageCircle, Instagram, Star, Sparkles, Zap, Wand2, CircleDashed, Hexagon, Play } from "lucide-react";
@@ -40,12 +39,9 @@ const Hero = () => {
       {/* Background Emojis */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <span className="absolute text-2xl opacity-30 animate-float" style={{bottom: '40%', left: '15%'}}>⚡</span>
-        <span className="absolute text-2xl opacity-30 animate-float-slow" style={{bottom: '25%', right: '20%'}}>📸</span>
-        <span className="absolute text-xl opacity-25 animate-float" style={{top: '60%', left: '5%'}}>✨</span>
-        <span className="absolute text-2xl opacity-30 animate-float-fast" style={{bottom: '60%', right: '8%'}}>🔥</span>
-        <span className="absolute text-2xl opacity-30 animate-float" style={{bottom: '45%', left: '75%'}}>💎</span>
-        <span className="absolute text-xl opacity-25 animate-float-slow" style={{top: '80%', left: '25%'}}>🎬</span>
-        <span className="absolute text-2xl opacity-30 animate-float-fast" style={{bottom: '30%', right: '60%'}}>🌟</span>
+        <span className="absolute text-xl opacity-25 animate-float-slow" style={{top: '60%', left: '5%'}}>✨</span>
+        <span className="absolute text-2xl opacity-30 animate-float-fast" style={{bottom: '45%', left: '75%'}}>💎</span>
+        <span className="absolute text-xl opacity-25 animate-float" style={{top: '80%', left: '25%'}}>🎬</span>
       </div>
       
       {/* Decorative elements with brand color */}
