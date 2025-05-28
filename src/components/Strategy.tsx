@@ -87,7 +87,7 @@ const Strategy = () => {
               <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg">
                 {cards[0].number}
               </div>
-              <div className="mt-16">
+              <div className="mt-16 font-extrabold text-4xl">
                 <h3 className="mb-4 text-gray-800 font-extrabold text-4xl">{cards[0].heading}</h3>
                 <p className="text-gray-700 leading-relaxed">{cards[0].subheading}</p>
               </div>
