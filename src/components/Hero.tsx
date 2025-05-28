@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, MessageCircle, Instagram, Star, Sparkles, Zap, Wand2, CircleDashed, Hexagon, Play } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
 const FloatingElement = ({
   children,
   className = "",
@@ -10,7 +9,6 @@ const FloatingElement = ({
 }) => <div className={`absolute ${className} ${animationClass}`}>
     {children}
   </div>;
-
 const Hero = () => {
   useEffect(() => {
     const observerOptions = {
@@ -30,18 +28,28 @@ const Hero = () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-[#678bd4]/10 via-white to-[#678bd4]/5">
+  return <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-[#678bd4]/10 via-white to-[#678bd4]/5">
       {/* Decorative pattern background */}
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
       
       {/* Background Emojis */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <span className="absolute text-2xl opacity-30 animate-float" style={{bottom: '40%', left: '15%'}}>⚡</span>
-        <span className="absolute text-xl opacity-25 animate-float-slow" style={{top: '60%', left: '5%'}}>✨</span>
-        <span className="absolute text-2xl opacity-30 animate-float-fast" style={{bottom: '45%', left: '75%'}}>💎</span>
-        <span className="absolute text-xl opacity-25 animate-float" style={{top: '80%', left: '25%'}}>🎬</span>
+        <span className="absolute text-2xl opacity-30 animate-float" style={{
+        bottom: '40%',
+        left: '15%'
+      }}>⚡</span>
+        <span className="absolute text-xl opacity-25 animate-float-slow" style={{
+        top: '60%',
+        left: '5%'
+      }}>✨</span>
+        <span className="absolute text-2xl opacity-30 animate-float-fast" style={{
+        bottom: '45%',
+        left: '75%'
+      }}>💎</span>
+        <span className="absolute text-xl opacity-25 animate-float" style={{
+        top: '80%',
+        left: '25%'
+      }}>🎬</span>
       </div>
       
       {/* Decorative elements with brand color */}
@@ -94,7 +102,7 @@ const Hero = () => {
             </span>
             <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent"> Impossible to Scroll Past on </span>
             <span className="bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 bg-clip-text text-transparent relative inline-block">
-              <span className="doodle-circle">Instagram</span>
+              <span className="doodle-circle text-indigo-300">Instagram</span>
               <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 bg-white rounded-xl shadow-lg p-1 animate-float">
                 <Instagram className="h-5 w-5 text-[#678bd4]" />
               </div>
@@ -149,8 +157,6 @@ const Hero = () => {
           <path fill="rgba(103, 139, 212, 0.2)" fillOpacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
         </svg>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
