@@ -108,7 +108,7 @@ const Strategy = () => {
                 {cards[1].number}
               </div>
               <div className="mt-16">
-                <h3 className="text-xl font-bold mb-4 text-gray-800">{cards[1].heading}</h3>
+                <h3 className="mb-4 text-gray-800 text-4xl font-extrabold">{cards[1].heading}</h3>
                 <p className="text-gray-700 leading-relaxed">{cards[1].subheading}</p>
               </div>
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
