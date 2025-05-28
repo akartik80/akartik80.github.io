@@ -22,46 +22,51 @@ const comparisonData = [
 
 const Comparison = () => {
   return (
-    <section id="comparison" className="relative overflow-hidden">
-      <div className="flex flex-col lg:flex-row min-h-[600px]">
-        {/* Without Autthia Side */}
-        <div className="flex-1 py-16 px-8 lg:px-16" style={{ backgroundColor: '#88acf1' }}>
-          <div className="max-w-2xl mx-auto lg:ml-auto lg:mr-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-12 text-center lg:text-left reveal-on-scroll">
+    <section id="comparison" className="py-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Title */}
+        <h2 className="text-3xl lg:text-4xl font-bold text-center mb-16 reveal-on-scroll">
+          <span className="text-gray-600">Without Autthia</span>
+          <span className="mx-4 text-gray-400">|</span>
+          <span className="gradient-text">With Autthia</span>
+        </h2>
+
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+          {/* Without Autthia Box */}
+          <div className="rounded-3xl p-8 lg:p-12 reveal-on-scroll" style={{ backgroundColor: '#88acf1' }}>
+            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-8 text-center">
               Without Autthia
-            </h2>
+            </h3>
             
-            <div className="space-y-8">
+            <div className="space-y-4">
               {comparisonData.map((item, index) => (
                 <div 
                   key={index} 
-                  className="reveal-on-scroll"
+                  className="comparison-pill without-pill reveal-on-scroll"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <p className="text-white text-lg lg:text-xl leading-relaxed font-medium">
+                  <p className="text-gray-700 text-base lg:text-lg font-medium leading-relaxed">
                     {item.without}
                   </p>
                 </div>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* With Autthia Side */}
-        <div className="flex-1 py-16 px-8 lg:px-16" style={{ backgroundColor: '#c1caf3' }}>
-          <div className="max-w-2xl mx-auto lg:mr-auto lg:ml-8">
-            <h2 className="text-3xl lg:text-4xl font-bold text-autthia-dark-purple mb-12 text-center lg:text-left reveal-on-scroll glow-text">
+          {/* With Autthia Box */}
+          <div className="rounded-3xl p-8 lg:p-12 reveal-on-scroll" style={{ backgroundColor: '#c1caf3' }}>
+            <h3 className="text-2xl lg:text-3xl font-bold text-autthia-dark-purple mb-8 text-center glow-text">
               With Autthia
-            </h2>
+            </h3>
             
-            <div className="space-y-8">
+            <div className="space-y-4">
               {comparisonData.map((item, index) => (
                 <div 
                   key={index} 
-                  className="reveal-on-scroll"
+                  className="comparison-pill with-pill reveal-on-scroll"
                   style={{ animationDelay: `${index * 0.1 + 0.2}s` }}
                 >
-                  <p className="text-autthia-dark-purple text-lg lg:text-xl leading-relaxed font-medium">
+                  <p className="text-autthia-dark-purple text-base lg:text-lg font-medium leading-relaxed">
                     {item.with}
                   </p>
                 </div>

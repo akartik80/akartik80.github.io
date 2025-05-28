@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -114,6 +115,22 @@
   
   .glow-text {
     text-shadow: 0 0 20px rgba(126, 105, 171, 0.6), 0 0 40px rgba(126, 105, 171, 0.4), 0 0 60px rgba(126, 105, 171, 0.2);
+  }
+  
+  .comparison-pill {
+    @apply bg-white rounded-full px-6 py-4 shadow-md transition-all duration-300 cursor-pointer;
+  }
+  
+  .comparison-pill:hover {
+    @apply transform scale-105 shadow-lg;
+  }
+  
+  .without-pill:hover {
+    box-shadow: 0 10px 25px rgba(136, 172, 241, 0.3);
+  }
+  
+  .with-pill:hover {
+    box-shadow: 0 10px 25px rgba(193, 202, 243, 0.4);
   }
   
   .autthia-card {
