@@ -59,7 +59,7 @@ const WhyDifferent = () => {
               animationDelay: `${index * 0.5}s`,
               animationDuration: `${6 + index}s`
             }}>
-                  <div className="flex flex-col items-center text-center p-8 h-full justify-center">
+                  <div className="flex flex-col items-center text-center p-8 h-full justify-center bg-[#b4cef6]">
                     <div className="text-autthia-purple group-hover:text-autthia-dark-purple transition-colors duration-300 mb-4">
                       {item.icon}
                     </div>
