@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -147,57 +148,26 @@
 
   .cloud-card {
     position: relative;
-    width: 280px;
-    height: 200px;
-    border-radius: 50px 120px 50px 120px / 80px 50px 80px 50px;
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    min-height: 200px;
+    padding: 2rem;
+    transition: all 0.3s ease-in-out;
   }
-
-  .cloud-card::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: 20px;
-    width: 60px;
-    height: 60px;
-    background: inherit;
-    border-radius: 50%;
-    z-index: -1;
-  }
-
-  .cloud-card::after {
-    content: '';
-    position: absolute;
-    top: -25px;
-    right: 30px;
-    width: 80px;
-    height: 80px;
-    background: inherit;
-    border-radius: 50%;
-    z-index: -1;
-  }
-
+  
   .cloud-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 0 30px rgba(139, 69, 219, 0.3), 0 15px 35px rgba(0, 0, 0, 0.12);
-    filter: brightness(1.05);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 
-  @media (max-width: 1024px) {
-    .cloud-card {
-      width: 320px;
-      height: 180px;
-      margin: 0 auto;
-    }
+  .cloud-card .card-subheading {
+    transition: opacity 0.3s ease-in-out;
   }
 
-  @media (max-width: 640px) {
-    .cloud-card {
-      width: 280px;
-      height: 160px;
-    }
+  .cloud-card:hover .card-subheading {
+    opacity: 0;
   }
 }
 
