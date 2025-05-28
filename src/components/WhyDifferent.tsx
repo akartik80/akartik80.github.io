@@ -39,7 +39,7 @@ const WhyDifferent = () => {
         <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-autthia-purple rounded-full blur-3xl opacity-10"></div>
         
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 reveal-on-scroll">
-          <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-5xl">We're Not Your Typical Agency</span>
+          <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-5xl">The Autthia Effect</span>
         </h2>
         
         <div className="max-w-3xl mx-auto text-center mb-16 reveal-on-scroll">
