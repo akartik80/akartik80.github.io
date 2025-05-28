@@ -151,51 +151,23 @@
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  }
-  
-  .cloud-card::before {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: 10px;
-    width: 50px;
-    height: 50px;
-    background: inherit;
-    border-radius: 50px;
-    box-shadow: 
-      40px 0 0 20px currentColor,
-      80px 0 0 10px currentColor,
-      120px 0 0 20px currentColor,
-      160px 0 0 15px currentColor;
-  }
-  
-  .cloud-card::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 20px;
-    width: 40px;
-    height: 40px;
-    background: inherit;
-    border-radius: 40px;
-    box-shadow: 
-      30px 0 0 10px currentColor,
-      60px 0 0 15px currentColor,
-      90px 0 0 5px currentColor,
-      120px 0 0 10px currentColor,
-      150px 0 0 8px currentColor;
-  }
-  
-  .cloud-card {
     border-radius: 50px;
     min-height: 200px;
     padding: 2rem;
+    transition: all 0.3s ease-in-out;
   }
   
   .cloud-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease-in-out;
+  }
+
+  .cloud-card .card-subheading {
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .cloud-card:hover .card-subheading {
+    opacity: 0;
   }
 }
 
