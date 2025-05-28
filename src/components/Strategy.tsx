@@ -102,17 +102,22 @@ const Strategy = () => {
             }}
           >
             <div 
-              className="cloud-card p-8 h-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden"
+              className="cloud-card relative"
               style={{ backgroundColor: cards[0].bgColor }}
             >
-              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg">
+              <div className="cloud-puff-1" style={{ backgroundColor: cards[0].bgColor }}></div>
+              <div className="cloud-puff-2" style={{ backgroundColor: cards[0].bgColor }}></div>
+              <div className="cloud-puff-3" style={{ backgroundColor: cards[0].bgColor }}></div>
+              <div className="cloud-puff-4" style={{ backgroundColor: cards[0].bgColor }}></div>
+              
+              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg z-10">
                 {cards[0].number}
               </div>
-              <div className="mt-16">
-                <h3 className="text-xl font-bold mb-4 text-gray-800">{cards[0].heading}</h3>
-                <p className="text-gray-700 leading-relaxed">{cards[0].subheading}</p>
+              
+              <div className="relative z-10 text-center">
+                <h3 className="text-lg font-bold mb-3 text-gray-800">{cards[0].heading}</h3>
+                <p className="text-sm text-gray-700 leading-relaxed">{cards[0].subheading}</p>
               </div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
             </div>
           </div>
 
@@ -127,17 +132,22 @@ const Strategy = () => {
             }}
           >
             <div 
-              className="cloud-card p-8 h-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden"
+              className="cloud-card relative"
               style={{ backgroundColor: cards[1].bgColor }}
             >
-              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg">
+              <div className="cloud-puff-1" style={{ backgroundColor: cards[1].bgColor }}></div>
+              <div className="cloud-puff-2" style={{ backgroundColor: cards[1].bgColor }}></div>
+              <div className="cloud-puff-3" style={{ backgroundColor: cards[1].bgColor }}></div>
+              <div className="cloud-puff-4" style={{ backgroundColor: cards[1].bgColor }}></div>
+              
+              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg z-10">
                 {cards[1].number}
               </div>
-              <div className="mt-16">
-                <h3 className="text-xl font-bold mb-4 text-gray-800">{cards[1].heading}</h3>
-                <p className="text-gray-700 leading-relaxed">{cards[1].subheading}</p>
+              
+              <div className="relative z-10 text-center">
+                <h3 className="text-lg font-bold mb-3 text-gray-800">{cards[1].heading}</h3>
+                <p className="text-sm text-gray-700 leading-relaxed">{cards[1].subheading}</p>
               </div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
             </div>
           </div>
 
@@ -152,17 +162,22 @@ const Strategy = () => {
             }}
           >
             <div 
-              className="cloud-card p-8 h-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden"
+              className="cloud-card relative"
               style={{ backgroundColor: cards[2].bgColor }}
             >
-              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg">
+              <div className="cloud-puff-1" style={{ backgroundColor: cards[2].bgColor }}></div>
+              <div className="cloud-puff-2" style={{ backgroundColor: cards[2].bgColor }}></div>
+              <div className="cloud-puff-3" style={{ backgroundColor: cards[2].bgColor }}></div>
+              <div className="cloud-puff-4" style={{ backgroundColor: cards[2].bgColor }}></div>
+              
+              <div className="absolute top-4 left-4 w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-2xl font-bold text-blue-600 shadow-lg z-10">
                 {cards[2].number}
               </div>
-              <div className="mt-16">
-                <h3 className="text-xl font-bold mb-4 text-gray-800">{cards[2].heading}</h3>
-                <p className="text-gray-700 leading-relaxed">{cards[2].subheading}</p>
+              
+              <div className="relative z-10 text-center">
+                <h3 className="text-lg font-bold mb-3 text-gray-800">{cards[2].heading}</h3>
+                <p className="text-sm text-gray-700 leading-relaxed">{cards[2].subheading}</p>
               </div>
-              <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
             </div>
           </div>
         </div>

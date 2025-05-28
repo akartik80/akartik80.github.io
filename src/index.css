@@ -148,53 +148,86 @@
 
   .cloud-card {
     position: relative;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    width: 280px;
+    height: 220px;
+    background: inherit;
+    border-radius: 100px;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
   
   .cloud-card::before {
     content: '';
     position: absolute;
-    top: -15px;
+    top: -50px;
     left: 10px;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 80px;
     background: inherit;
-    border-radius: 50px;
-    box-shadow: 
-      40px 0 0 20px currentColor,
-      80px 0 0 10px currentColor,
-      120px 0 0 20px currentColor,
-      160px 0 0 15px currentColor;
+    border-radius: 100px;
+    transform: rotate(-45deg);
   }
   
   .cloud-card::after {
     content: '';
     position: absolute;
-    bottom: -10px;
-    left: 20px;
-    width: 40px;
-    height: 40px;
+    top: -45px;
+    left: auto;
+    right: 15px;
+    width: 70px;
+    height: 70px;
     background: inherit;
-    border-radius: 40px;
-    box-shadow: 
-      30px 0 0 10px currentColor,
-      60px 0 0 15px currentColor,
-      90px 0 0 5px currentColor,
-      120px 0 0 10px currentColor,
-      150px 0 0 8px currentColor;
+    border-radius: 100px;
+    transform: rotate(45deg);
   }
   
-  .cloud-card {
-    border-radius: 50px;
-    min-height: 200px;
-    padding: 2rem;
+  .cloud-card .cloud-puff-1 {
+    position: absolute;
+    top: -25px;
+    left: 50px;
+    width: 80px;
+    height: 80px;
+    background: inherit;
+    border-radius: 100px;
+  }
+  
+  .cloud-card .cloud-puff-2 {
+    position: absolute;
+    top: -20px;
+    right: 50px;
+    width: 60px;
+    height: 60px;
+    background: inherit;
+    border-radius: 100px;
+  }
+  
+  .cloud-card .cloud-puff-3 {
+    position: absolute;
+    bottom: -15px;
+    left: 20px;
+    width: 50px;
+    height: 40px;
+    background: inherit;
+    border-radius: 100px;
+  }
+  
+  .cloud-card .cloud-puff-4 {
+    position: absolute;
+    bottom: -10px;
+    right: 30px;
+    width: 45px;
+    height: 35px;
+    background: inherit;
+    border-radius: 100px;
   }
   
   .cloud-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease-in-out;
   }
 }
