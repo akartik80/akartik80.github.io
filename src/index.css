@@ -146,68 +146,28 @@
     @apply opacity-100;
   }
 
-  /* True cloud shape with floating animation */
   .cloud-card {
     position: relative;
-    width: 280px;
-    height: 220px;
-    padding: 2rem 1.5rem;
-    border-radius: 80px 120px 100px 90px / 60px 80px 70px 85px;
-    box-shadow: 0 8px 25px rgba(135, 206, 235, 0.15), 
-                0 4px 12px rgba(135, 206, 235, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(2px);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    animation: float-gentle 6s ease-in-out infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    min-height: 200px;
+    padding: 2rem;
+    transition: all 0.3s ease-in-out;
   }
-
-  /* Floating animation variants */
-  .cloud-card:nth-child(1) {
-    animation: float-gentle 6s ease-in-out infinite;
-  }
-
-  .cloud-card:nth-child(2) {
-    animation: float-gentle 7s ease-in-out infinite 0.5s;
-  }
-
-  .cloud-card:nth-child(3) {
-    animation: float-gentle 6.5s ease-in-out infinite 1s;
-  }
-
-  .cloud-card:nth-child(4) {
-    animation: float-gentle 7.5s ease-in-out infinite 1.5s;
-  }
-
-  /* Hover effects - soft glow */
+  
   .cloud-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 35px rgba(135, 206, 235, 0.25),
-                0 8px 20px rgba(135, 206, 235, 0.15),
-                0 0 0 3px rgba(135, 206, 235, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    border-color: rgba(135, 206, 235, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 
-  /* Mobile responsive */
-  @media (max-width: 1024px) {
-    .cloud-card {
-      width: 260px;
-      height: 200px;
-      padding: 1.5rem 1.25rem;
-    }
+  .cloud-card .card-subheading {
+    transition: opacity 0.3s ease-in-out;
   }
 
-  @media (max-width: 640px) {
-    .cloud-card {
-      width: 280px;
-      height: 180px;
-      padding: 1.25rem 1rem;
-      border-radius: 70px 100px 80px 75px / 50px 65px 55px 70px;
-    }
+  .cloud-card:hover .card-subheading {
+    opacity: 0;
   }
 }
 
@@ -231,21 +191,5 @@
   
   .animate-marquee {
     animation: marquee 20s linear infinite;
-  }
-
-  /* Gentle floating animation for clouds */
-  @keyframes float-gentle {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    25% {
-      transform: translateY(-8px) rotate(0.5deg);
-    }
-    50% {
-      transform: translateY(-12px) rotate(0deg);
-    }
-    75% {
-      transform: translateY(-8px) rotate(-0.5deg);
-    }
   }
 }
