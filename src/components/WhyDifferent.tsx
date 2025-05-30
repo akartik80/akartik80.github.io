@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Eye, Users, Instagram, Zap } from 'lucide-react';
 
@@ -7,28 +8,28 @@ const differentiators = [{
   id: 1,
   icon: <Eye className="h-8 w-8" />,
   title: "Know Audience Psychology (Deeply)",
-  description: "We decode how attention works online—and create content that keeps it.",
+  description: "We decode how attention works online, and create content that keeps it.",
   bgColor: "bg-[#678bd4]",
   position: "top-8 left-4"
 }, {
   id: 2,
   icon: <Users className="h-8 w-8" />,
-  title: "Work With Founders (Only)",
+  title: "Work With Founders (Exclusively)",
   description: "Our clients are all founders, so we get your pace, your pressure, and your purpose.",
   bgColor: "bg-[#678bd4]/80",
   position: "top-20 left-1/4"
 }, {
   id: 3,
   icon: <Instagram className="h-8 w-8" />,
-  title: "Focus Only on Instagram (And Dominate It)",
-  description: "Instagram isn't one of many things we do—it's the only thing we do.",
+  title: "Focus On Instagram (Only)",
+  description: "Instagram isn't one of many things we do, it's the only thing we do.",
   bgColor: "bg-[#678bd4]/60",
   position: "top-4 left-2/4"
 }, {
   id: 4,
   icon: <Zap className="h-8 w-8" />,
-  title: "We Use 'Edutelling'™ (Strategically)",
-  description: "We mix storytelling and education so you come across as human and credible—never preachy.",
+  title: "Use 'Edutelling'™ (Strategically)",
+  description: "We mix storytelling and education so you come across as human and credible, never preachy.",
   bgColor: "bg-[#678bd4]",
   position: "top-16 right-4"
 }];
@@ -54,12 +55,14 @@ const WhyDifferent = () => {
             {differentiators.map((item, index) => {
             // Define vertical offsets for each card to create floating effect
             const verticalOffsets = ['translate-y-4', '-translate-y-2', 'translate-y-6', '-translate-y-4'];
-            return <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow ${verticalOffsets[index]} hover:bg-indigo-300 transition-colors duration-300`} style={{
+            return <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow ${verticalOffsets[index]} hover:bg-indigo-300 transition-colors duration-300 shadow-2xl`} style={{
               animationDelay: `${index * 0.5}s`,
-              animationDuration: `${6 + index}s`
+              animationDuration: `${6 + index}s`,
+              boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)',
+              transform: 'translateZ(0) perspective(1000px) rotateX(5deg)'
             }}>
                   <div className="flex flex-col items-center text-center p-8 h-full justify-center">
-                    <div className="text-white group-hover:text-gray-800 transition-colors duration-300 mb-4">
+                    <div className="text-yellow-300 drop-shadow-lg group-hover:text-gray-800 transition-colors duration-300 mb-4 filter brightness-110">
                       {item.icon}
                     </div>
                     <h3 className="text-lg font-bold mb-3 text-white group-hover:text-gray-800 transition-colors duration-300">
@@ -76,12 +79,14 @@ const WhyDifferent = () => {
         
         {/* Mobile: Vertical Stack */}
         <div className="md:hidden space-y-8 reveal-on-scroll">
-          {differentiators.map((item, index) => <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow mx-auto hover:bg-indigo-300 transition-colors duration-300`} style={{
+          {differentiators.map((item, index) => <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow mx-auto hover:bg-indigo-300 transition-colors duration-300 shadow-2xl`} style={{
           animationDelay: `${index * 0.3}s`,
-          animationDuration: `${6 + index}s`
+          animationDuration: `${6 + index}s`,
+          boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)',
+          transform: 'translateZ(0) perspective(1000px) rotateX(5deg)'
         }}>
               <div className="flex flex-col items-center text-center p-8 h-full justify-center">
-                <div className="text-white group-hover:text-gray-800 transition-colors duration-300 mb-4">
+                <div className="text-yellow-300 drop-shadow-lg group-hover:text-gray-800 transition-colors duration-300 mb-4 filter brightness-110">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-white group-hover:text-gray-800 transition-colors duration-300">
@@ -97,3 +102,4 @@ const WhyDifferent = () => {
     </section>;
 };
 export default WhyDifferent;
+
