@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ClientLogos from "@/components/ClientLogos";
-import Process from "@/components/Process";
 import Comparison from "@/components/Comparison";
 import UnifiedShowcase from "@/components/UnifiedShowcase";
 import ProofShowcase from "@/components/ProofShowcase";
@@ -44,8 +43,6 @@ const Index = () => {
       <ClientLogos />
       {/* Combined The Autthia Effect + Scroll-Stopping Founder Reels */}
       <UnifiedShowcase />
-      {/* How It Works */}
-      <Process />
       {/* Scroll-Stopping Founder Reels */}
       <ProofShowcase />
       {/* With Autthia / Without Autthia */}
