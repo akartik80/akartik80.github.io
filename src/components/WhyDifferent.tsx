@@ -1,30 +1,25 @@
-
 import React, { useEffect } from 'react';
 import { Eye, Users, Instagram, Zap } from 'lucide-react';
 
-// Data for the four staggered cards
+// Data for the four cards in horizontal line
 const differentiators = [{
   id: 1,
   emoji: "🧠",
-  icon: <Eye className="h-6 w-6" />,
   title: "Know Audience Psychology (Deeply)",
   description: "We decode how attention works online, and create content that keeps it.",
 }, {
   id: 2,
   emoji: "🤝",
-  icon: <Users className="h-6 w-6" />,
   title: "Work With Founders (Exclusively)",
   description: "Our clients are all founders. We get your pace, your pressure, and your purpose.",
 }, {
   id: 3,
   emoji: "📱",
-  icon: <Instagram className="h-6 w-6" />,
   title: "Focus On Instagram (Only)",
   description: "Instagram isn't one of many platforms, it's our only obsession.",
 }, {
   id: 4,
   emoji: "✨",
-  icon: <Zap className="h-6 w-6" />,
   title: "Use 'Edutelling'™ (Strategically)",
   description: "We blend education + storytelling so you show up as credible, not preachy.",
 }];
@@ -118,93 +113,13 @@ const WhyDifferent = () => {
             <p className="text-gray-600 text-xl leading-relaxed">Most agencies tell you to "post more," "teach more," or "sell more." But we disagree with that approach, instead we:</p>
           </div>
           
-          {/* Desktop: Staggered Grid Layout */}
-          <div className="hidden lg:block max-w-7xl mx-auto reveal-on-scroll">
-            <div className="grid grid-cols-2 gap-x-16 gap-y-12 relative">
-              {/* Top row - 2 cards */}
-              <div className="flex justify-center">
-                <div className="premium-card group transform hover:scale-105 hover:shadow-2xl transition-all duration-500">
-                  <div className="text-4xl mb-4">{differentiators[0].emoji}</div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
-                      {differentiators[0].icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
-                    {differentiators[0].title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {differentiators[0].description}
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex justify-center mt-8">
-                <div className="premium-card group transform hover:scale-105 hover:shadow-2xl transition-all duration-500">
-                  <div className="text-4xl mb-4">{differentiators[1].emoji}</div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
-                      {differentiators[1].icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
-                    {differentiators[1].title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {differentiators[1].description}
-                  </p>
-                </div>
-              </div>
-              
-              {/* Bottom row - 2 cards */}
-              <div className="flex justify-center -mt-4">
-                <div className="premium-card group transform hover:scale-105 hover:shadow-2xl transition-all duration-500">
-                  <div className="text-4xl mb-4">{differentiators[2].emoji}</div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
-                      {differentiators[2].icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
-                    {differentiators[2].title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {differentiators[2].description}
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex justify-center">
-                <div className="premium-card group transform hover:scale-105 hover:shadow-2xl transition-all duration-500">
-                  <div className="text-4xl mb-4">{differentiators[3].emoji}</div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
-                      {differentiators[3].icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
-                    {differentiators[3].title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {differentiators[3].description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Tablet: 2x2 Grid */}
-          <div className="hidden md:block lg:hidden max-w-4xl mx-auto reveal-on-scroll">
-            <div className="grid grid-cols-2 gap-8">
+          {/* Desktop & Tablet: Horizontal Line */}
+          <div className="hidden md:block max-w-7xl mx-auto reveal-on-scroll">
+            <div className="grid grid-cols-4 gap-6">
               {differentiators.map((item, index) => (
                 <div key={item.id} className="flex justify-center">
                   <div className="premium-card group transform hover:scale-105 hover:shadow-2xl transition-all duration-500">
                     <div className="text-4xl mb-4">{item.emoji}</div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
-                        {item.icon}
-                      </div>
-                    </div>
                     <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
                       {item.title}
                     </h3>
@@ -224,11 +139,6 @@ const WhyDifferent = () => {
                 animationDelay: `${index * 0.2}s`
               }}>
                 <div className="text-4xl mb-4">{item.emoji}</div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
-                    {item.icon}
-                  </div>
-                </div>
                 <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
                   {item.title}
                 </h3>
