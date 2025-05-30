@@ -31,10 +31,10 @@ const differentiators = [{
   description: "We blend education + storytelling so you show up as credible, not preachy.",
 }];
 
-// Only include reels with actual videos loaded
+// 4 phone mockups with the same video
 const processSteps = [{
   id: 1,
-  videoUrl: "https://drive.google.com/uc?export=download&id=15f4qyZb16A-JJppss0YjQvTBT87pQV7j",
+  videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
   thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
   angle: "-8deg"
 }, {
@@ -42,7 +42,17 @@ const processSteps = [{
   videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
   thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
   angle: "4deg"
-}].filter(step => step.videoUrl); // Only include items with actual videos
+}, {
+  id: 3,
+  videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
+  thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+  angle: "-3deg"
+}, {
+  id: 4,
+  videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
+  thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+  angle: "6deg"
+}];
 
 const WhyDifferent = () => {
   useEffect(() => {
