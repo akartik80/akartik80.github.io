@@ -1,7 +1,6 @@
-
 import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Heart, MessageCircle, Instagram, Star, Sparkles, Zap, Wand2, CircleDashed, Hexagon, Play } from "lucide-react";
+import { ArrowRight, Heart, MessageCircle, Instagram, CircleDashed, Hexagon, Play } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 const FloatingElement = ({
@@ -92,11 +91,6 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <Sparkles className="text-[#678bd4] h-10 w-10 absolute -top-6 -left-6 animate-pulse-soft" />
-            </div>
-          </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-8 reveal-on-scroll relative">
             <span className="absolute -left-10 top-0 text-[#678bd4]/30 opacity-30 text-8xl font-bold">"</span>
@@ -106,7 +100,7 @@ const Hero = () => {
             </span>
             <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent"> Impossible to Scroll Past on </span>
             <span className="text-indigo-300 relative inline-block">
-              <span className="doodle-circle">Instagram</span>
+              <span>Instagram</span>
               <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 bg-white rounded-xl shadow-lg p-1 animate-float">
                 <Instagram className="h-5 w-5 text-[#678bd4]" />
               </div>
