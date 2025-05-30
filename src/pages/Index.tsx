@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ClientLogos from "@/components/ClientLogos";
 import WhyDifferent from "@/components/WhyDifferent";
+import Strategy from "@/components/Strategy";
 import Comparison from "@/components/Comparison";
 import StatsShowcase from "@/components/StatsShowcase";
 import ProofShowcase from "@/components/ProofShowcase";
@@ -44,6 +45,8 @@ const Index = () => {
       <ClientLogos />
       {/* We're Not Your Typical Agency */}
       <WhyDifferent />
+      {/* How It Works */}
+      <Strategy />
       {/* The Autthia Effect */}
       <StatsShowcase />
       {/* Scroll-Stopping Founder Reels */}
