@@ -56,7 +56,7 @@ const WhyDifferent = () => {
               animationDelay: `${index * 0.5}s`,
               animationDuration: `${6 + index}s`
             }}>
-                  <div className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-5xl">
+                  <div className="flex flex-col items-center text-center p-8 h-full justify-center bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-5xl">
                     <div className="text-autthia-purple group-hover:text-autthia-dark-purple transition-colors duration-300 mb-4">
                       {item.icon}
                     </div>
