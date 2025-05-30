@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Eye, Users, Instagram, Zap } from 'lucide-react';
 
@@ -271,7 +270,25 @@ const WhyDifferent = () => {
                     <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
                       {/* Video content */}
                       <div className="absolute inset-0">
-                        <img src={step.thumbnail} alt={step.title} className="w-full h-full object-cover" />
+                      {step.videoUrl ? (
+                          <video 
+                            className="w-full h-full object-cover" 
+                            autoPlay 
+                            loop 
+                            muted
+                            playsInline
+                            preload="metadata"
+                            webkit-playsinline="true"
+                            x5-playsinline="true"
+                            controls={false}
+                            disablePictureInPicture
+                          >
+                            <source src={step.videoUrl} type="video/mp4" />
+                            <img src={step.thumbnail} alt={step.title} className="w-full h-full object-cover" />
+                          </video>
+                        ) : (
+                          <img src={step.thumbnail} alt={step.title} className="w-full h-full object-cover" />
+                        )}
                         
                         {/* Overlay gradient */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20"></div>
