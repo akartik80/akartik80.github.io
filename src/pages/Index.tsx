@@ -3,8 +3,10 @@ import React, { useEffect } from 'react';
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ClientLogos from "@/components/ClientLogos";
+import WhyDifferent from "@/components/WhyDifferent";
+import Process from "@/components/Process";
 import Comparison from "@/components/Comparison";
-import UnifiedShowcase from "@/components/UnifiedShowcase";
+import StatsShowcase from "@/components/StatsShowcase";
 import ProofShowcase from "@/components/ProofShowcase";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import FAQ from "@/components/FAQ";
@@ -41,8 +43,12 @@ const Index = () => {
       <Hero />
       {/* Trusted By Section */}
       <ClientLogos />
-      {/* Combined The Autthia Effect + Scroll-Stopping Founder Reels */}
-      <UnifiedShowcase />
+      {/* We're Not Your Typical Agency */}
+      <WhyDifferent />
+      {/* How It Works */}
+      <Process />
+      {/* The Autthia Effect */}
+      <StatsShowcase />
       {/* Scroll-Stopping Founder Reels */}
       <ProofShowcase />
       {/* With Autthia / Without Autthia */}
