@@ -102,7 +102,7 @@ const Hero = () => {
             </span>
             <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent"> Impossible to Scroll Past on </span>
             <span className="bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 bg-clip-text text-transparent relative inline-block">
-              <span className="doodle-circle">Instagram</span>
+              <span className="doodle-circle text-[autthia-light-purple] text-indigo-300">Instagram</span>
               <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 bg-white rounded-xl shadow-lg p-1 animate-float">
                 <Instagram className="h-5 w-5 text-[#678bd4]" />
               </div>
