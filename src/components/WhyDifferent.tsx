@@ -43,7 +43,10 @@ const WhyDifferent = () => {
         </h2>
         
         <div className="max-w-3xl mx-auto text-center mb-16 reveal-on-scroll">
-          <p className="text-muted-foreground text-xl">Most agencies tell you to &quot;post more,&quot; &quot;teach more,&quot; or &quot;sell more.&quot; But we disagree with that approach, instead we:</p>
+          <p className="text-lg text-muted-foreground">
+            Most agencies tell you to "post more," "teach more," or "sell more."
+            We believe true influence comes from stories that educate without preaching.
+          </p>
         </div>
         
         {/* Desktop: Horizontal Layout with Vertical Variance */}
@@ -56,11 +59,11 @@ const WhyDifferent = () => {
               animationDelay: `${index * 0.5}s`,
               animationDuration: `${6 + index}s`
             }}>
-                  <div className="flex flex-col items-center text-center p-8 h-full justify-center">
+                  <div className="flex flex-col items-center text-center p-8 h-full justify-center bg-[#b4cef6]">
                     <div className="text-autthia-purple group-hover:text-autthia-dark-purple transition-colors duration-300 mb-4">
                       {item.icon}
                     </div>
-                    <h3 className="text-lg font-bold mb-3 group-hover:text-autthia-dark-purple transition-colors duration-300 text-zinc-600">
+                    <h3 className="mb-3 group-hover:text-autthia-dark-purple transition-colors duration-300 text-xl font-bold">
                       {item.title}
                     </h3>
                     <p className="text-sm text-muted-foreground">

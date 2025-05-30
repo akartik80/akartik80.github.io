@@ -19,7 +19,7 @@ const Comparison = () => {
         <h2 className="text-3xl lg:text-4xl font-bold text-center mb-16 reveal-on-scroll">
           
           <span className="mx-4 text-gray-400">|</span>
-          
+          <span className="gradient-text">With Autthia</span>
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
