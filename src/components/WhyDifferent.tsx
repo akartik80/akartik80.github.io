@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Eye, Users, Instagram, Zap } from 'lucide-react';
 
@@ -105,7 +106,8 @@ const WhyDifferent = () => {
     };
   }, []);
 
-  return <section id="why-different" className="py-24 bg-gradient-to-b from-white via-autthia-blue/5 to-white overflow-hidden relative">
+  return (
+    <section id="why-different" className="py-24 bg-gradient-to-b from-white via-autthia-blue/5 to-white overflow-hidden relative">
       <div className="container mx-auto px-4 relative">
         {/* Decorative elements */}
         <div className="absolute -top-20 -left-20 w-64 h-64 bg-autthia-light-purple rounded-full blur-3xl opacity-10"></div>
@@ -125,36 +127,39 @@ const WhyDifferent = () => {
             {differentiators.map((item, index) => {
             // Define vertical offsets for each card to create floating effect
             const verticalOffsets = ['translate-y-4', '-translate-y-2', 'translate-y-6', '-translate-y-4'];
-            return <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow ${verticalOffsets[index]} hover:bg-indigo-300 transition-colors duration-300 shadow-2xl`} style={{
-              animationDelay: `${index * 0.5}s`,
-              animationDuration: `${6 + index}s`,
-              boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)',
-              transform: 'translateZ(0) perspective(1000px) rotateX(5deg)'
-            }}>
-                  <div className="flex flex-col items-center text-center p-8 h-full justify-center">
-                    <div className="text-indigo-300 drop-shadow-lg group-hover:text-gray-800 transition-colors duration-300 mb-4 filter brightness-110">
-                      {item.icon}
-                    </div>
-                    <h3 className="text-lg font-bold mb-3 text-white group-hover:text-gray-800 transition-colors duration-300">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-white/90 group-hover:text-gray-700 transition-colors duration-300">
-                      {item.description}
-                    </p>
+            return (
+              <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow ${verticalOffsets[index]} hover:bg-indigo-300 transition-colors duration-300 shadow-2xl`} style={{
+                animationDelay: `${index * 0.5}s`,
+                animationDuration: `${6 + index}s`,
+                boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)',
+                transform: 'translateZ(0) perspective(1000px) rotateX(5deg)'
+              }}>
+                <div className="flex flex-col items-center text-center p-8 h-full justify-center">
+                  <div className="text-indigo-300 drop-shadow-lg group-hover:text-gray-800 transition-colors duration-300 mb-4 filter brightness-110">
+                    {item.icon}
                   </div>
-                </div>;
+                  <h3 className="text-lg font-bold mb-3 text-white group-hover:text-gray-800 transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-white/90 group-hover:text-gray-700 transition-colors duration-300">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            );
           })}
           </div>
         </div>
         
         {/* Mobile: Vertical Stack */}
         <div className="md:hidden space-y-8 reveal-on-scroll">
-          {differentiators.map((item, index) => <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow mx-auto hover:bg-indigo-300 transition-colors duration-300 shadow-2xl`} style={{
-          animationDelay: `${index * 0.3}s`,
-          animationDuration: `${6 + index}s`,
-          boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)',
-          transform: 'translateZ(0) perspective(1000px) rotateX(5deg)'
-        }}>
+          {differentiators.map((item, index) => (
+            <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow mx-auto hover:bg-indigo-300 transition-colors duration-300 shadow-2xl`} style={{
+              animationDelay: `${index * 0.3}s`,
+              animationDuration: `${6 + index}s`,
+              boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)',
+              transform: 'translateZ(0) perspective(1000px) rotateX(5deg)'
+            }}>
               <div className="flex flex-col items-center text-center p-8 h-full justify-center">
                 <div className="text-indigo-300 drop-shadow-lg group-hover:text-gray-800 transition-colors duration-300 mb-4 filter brightness-110">
                   {item.icon}
@@ -166,7 +171,8 @@ const WhyDifferent = () => {
                   {item.description}
                 </p>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
 
         {/* Process Section - Moved from Process.tsx */}
@@ -174,10 +180,11 @@ const WhyDifferent = () => {
           <div className="process-container max-w-6xl mx-auto">
             {/* Top row - 3 phones */}
             <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 mb-12">
-              {processSteps.slice(0, 3).map((step, index) => <div key={step.id} className="process-item reveal-on-scroll opacity-0 group" style={{
-              transform: `rotate(${step.angle})`,
-              animationDelay: `${index * 0.2}s`
-            }}>
+              {processSteps.slice(0, 3).map((step, index) => (
+                <div key={step.id} className="process-item reveal-on-scroll opacity-0 group" style={{
+                  transform: `rotate(${step.angle})`,
+                  animationDelay: `${index * 0.2}s`
+                }}>
                   {/* Phone mockup container */}
                   <div className="relative w-64 h-[450px] bg-black rounded-[2.5rem] p-2 shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-3xl group-hover:rotate-0">
                     {/* Phone screen */}
@@ -242,19 +249,22 @@ const WhyDifferent = () => {
                     
                     {/* Phone details */}
                     <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-300 rounded-full"></div>
+                  </div>
                   
                   {/* Floating elements for 3D effect */}
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-autthia-purple/20 rounded-full blur-sm animate-float-slow"></div>
                   <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-autthia-blue/20 rounded-full blur-sm animate-float-fast"></div>
-                </div>)}
+                </div>
+              ))}
             </div>
 
             {/* Bottom row - 2 phones staggered */}
             <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-32">
-              {processSteps.slice(3, 5).map((step, index) => <div key={step.id} className="process-item reveal-on-scroll opacity-0 group" style={{
-              transform: `rotate(${step.angle})`,
-              animationDelay: `${(index + 3) * 0.2}s`
-            }}>
+              {processSteps.slice(3, 5).map((step, index) => (
+                <div key={step.id} className="process-item reveal-on-scroll opacity-0 group" style={{
+                  transform: `rotate(${step.angle})`,
+                  animationDelay: `${(index + 3) * 0.2}s`
+                }}>
                   {/* Phone mockup container */}
                   <div className="relative w-64 h-[450px] bg-black rounded-[2.5rem] p-2 shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-3xl group-hover:rotate-0">
                     {/* Phone screen */}
@@ -306,11 +316,14 @@ const WhyDifferent = () => {
                   {/* Floating elements for 3D effect */}
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-autthia-purple/20 rounded-full blur-sm animate-float-slow"></div>
                   <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-autthia-blue/20 rounded-full blur-sm animate-float-fast"></div>
-                </div>)}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default WhyDifferent;
