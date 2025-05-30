@@ -1,110 +1,93 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { Instagram, Diamond, Star, Smile } from 'lucide-react';
-
-const circleData = [
-  {
-    id: 1,
-    title: "We Know Audience Psychology",
-    subtitle: "(Deeply)",
-    description: "Understanding what makes founders stop scrolling, engage, and convert through psychological triggers",
-    color: "#b8d0ff"
-  },
-  {
-    id: 2,
-    title: "We Work With Founders",
-    subtitle: "(Exclusively)",
-    description: "100% focused on founder stories, challenges, and authentic personal branding strategies",
-    color: "#9abafa"
-  },
-  {
-    id: 3,
-    title: "We Focus On Instagram",
-    subtitle: "(Only)",
-    description: "Master-level expertise in Instagram's algorithm, trends, and vertical video optimization",
-    color: "#80a9fd"
-  },
-  {
-    id: 4,
-    title: "We Use Edutelling",
-    subtitle: "(Signaturely)",
-    description: "Our proprietary framework combining education with storytelling for maximum impact",
-    color: "#6f90d8"
-  }
-];
+const circleData = [{
+  id: 1,
+  title: "We Know Audience Psychology",
+  subtitle: "(Deeply)",
+  description: "Understanding what makes founders stop scrolling, engage, and convert through psychological triggers",
+  color: "#b8d0ff"
+}, {
+  id: 2,
+  title: "We Work With Founders",
+  subtitle: "(Exclusively)",
+  description: "100% focused on founder stories, challenges, and authentic personal branding strategies",
+  color: "#9abafa"
+}, {
+  id: 3,
+  title: "We Focus On Instagram",
+  subtitle: "(Only)",
+  description: "Master-level expertise in Instagram's algorithm, trends, and vertical video optimization",
+  color: "#80a9fd"
+}, {
+  id: 4,
+  title: "We Use Edutelling",
+  subtitle: "(Signaturely)",
+  description: "Our proprietary framework combining education with storytelling for maximum impact",
+  color: "#6f90d8"
+}];
 
 // Sample videos for phone mockups
-const videos = [
-  {
-    id: 1,
-    title: "Tech Founder Journey",
-    thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-    client: "Sarah Johnson"
-  },
-  {
-    id: 2,
-    title: "Startup Morning Routine",
-    thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-    client: "Mark Davis"
-  },
-  {
-    id: 3,
-    title: "Product Launch Strategy",
-    thumbnail: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-    client: "Emma Wilson"
-  },
-  {
-    id: 4,
-    title: "Founder Interview Series",
-    thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
-    client: "Alex Brown"
-  },
-  {
-    id: 5,
-    title: "Behind the Scenes",
-    thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-    client: "Jessica Smith"
-  }
-];
-
-const FloatingIcon = ({ Icon, className }: { Icon: React.ComponentType<any>; className: string }) => (
-  <Icon className={`absolute text-autthia-purple/20 ${className}`} size={20} />
-);
-
-const CircleCard = ({ circle, index }: { circle: typeof circleData[0]; index: number }) => {
+const videos = [{
+  id: 1,
+  title: "Tech Founder Journey",
+  thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+  client: "Sarah Johnson"
+}, {
+  id: 2,
+  title: "Startup Morning Routine",
+  thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+  client: "Mark Davis"
+}, {
+  id: 3,
+  title: "Product Launch Strategy",
+  thumbnail: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+  client: "Emma Wilson"
+}, {
+  id: 4,
+  title: "Founder Interview Series",
+  thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
+  client: "Alex Brown"
+}, {
+  id: 5,
+  title: "Behind the Scenes",
+  thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+  client: "Jessica Smith"
+}];
+const FloatingIcon = ({
+  Icon,
+  className
+}: {
+  Icon: React.ComponentType<any>;
+  className: string;
+}) => <Icon className={`absolute text-autthia-purple/20 ${className}`} size={20} />;
+const CircleCard = ({
+  circle,
+  index
+}: {
+  circle: typeof circleData[0];
+  index: number;
+}) => {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
     if (cardRef.current) {
       observer.observe(cardRef.current);
     }
-
     return () => observer.disconnect();
   }, []);
-
-  return (
-    <div
-      ref={cardRef}
-      className={`circle-cloud-card mx-auto transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
-      style={{
-        backgroundColor: circle.color,
-        animationDelay: `${index * 0.2}s`
-      }}
-    >
+  return <div ref={cardRef} className={`circle-cloud-card mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{
+    backgroundColor: circle.color,
+    animationDelay: `${index * 0.2}s`
+  }}>
       <div className="w-full h-full flex flex-col items-center justify-center text-center p-6">
         <h3 className="text-lg font-bold text-white mb-2 leading-tight">
           {circle.title}
@@ -116,26 +99,21 @@ const CircleCard = ({ circle, index }: { circle: typeof circleData[0]; index: nu
           {circle.description}
         </p>
       </div>
-    </div>
-  );
+    </div>;
 };
-
-const PhoneMockup = ({ video, className = "" }: { video: typeof videos[0]; className?: string }) => {
+const PhoneMockup = ({
+  video,
+  className = ""
+}: {
+  video: typeof videos[0];
+  className?: string;
+}) => {
   const [isPlaying, setIsPlaying] = useState(false);
-
-  return (
-    <div className={`relative ${className}`}>
+  return <div className={`relative ${className}`}>
       <div className="w-32 sm:w-40 md:w-48 lg:w-56 aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-xl border-4 border-gray-800 relative">
-        <img 
-          src={video.thumbnail} 
-          alt={video.title} 
-          className="w-full h-full object-cover"
-        />
+        <img src={video.thumbnail} alt={video.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <button 
-            className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all"
-            onClick={() => setIsPlaying(!isPlaying)}
-          >
+          <button className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all" onClick={() => setIsPlaying(!isPlaying)}>
             <div className="w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
           </button>
         </div>
@@ -144,35 +122,28 @@ const PhoneMockup = ({ video, className = "" }: { video: typeof videos[0]; class
           <p className="text-white/80 text-xs">{video.client}</p>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 const StatsShowcase = () => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -100px 0px"
     };
-
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('revealed');
         }
       });
     }, observerOptions);
-
     const elements = document.querySelectorAll('.reveal-on-scroll');
     elements.forEach(el => observer.observe(el));
-
     return () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white">
+  return <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white">
       {/* Floating Background Icons */}
       <FloatingIcon Icon={Instagram} className="top-10 left-[10%] animate-float" />
       <FloatingIcon Icon={Diamond} className="top-20 right-[15%] animate-float-slow" />
@@ -192,15 +163,13 @@ const StatsShowcase = () => {
 
         {/* Circle Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 mb-24">
-          {circleData.map((circle, index) => (
-            <CircleCard key={circle.id} circle={circle} index={index} />
-          ))}
+          {circleData.map((circle, index) => <CircleCard key={circle.id} circle={circle} index={index} />)}
         </div>
 
         {/* Phone Mockups Section */}
         <div className="text-center mb-12">
           <h3 className="text-3xl md:text-4xl font-bold mb-4 reveal-on-scroll">
-            <span className="gradient-text">Scroll-Stopping Founder Reels</span>
+            
           </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto reveal-on-scroll">
             Experience our authentic vertical video content created for founders just like you
@@ -223,8 +192,6 @@ const StatsShowcase = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default StatsShowcase;
