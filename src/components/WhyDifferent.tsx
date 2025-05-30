@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Eye, Users, Instagram, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
 import {
@@ -145,12 +146,12 @@ const WhyDifferent = () => {
 
       {/* Reels Section */}
       <section className="py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden relative">
-        <div className="container mx-auto px-4 relative">
+        <div className="container mx-auto px-8 relative">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 reveal-on-scroll">
             <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-5xl">Scroll-Stopping Founder Reels</span>
           </h2>
 
-          <div className="max-w-6xl mx-auto reveal-on-scroll relative">
+          <div className="max-w-6xl mx-auto reveal-on-scroll relative py-8">
             {/* Fade gradients on edges */}
             <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
             <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
@@ -160,12 +161,12 @@ const WhyDifferent = () => {
                 align: "start",
                 loop: true,
               }}
-              className="w-full"
+              className="w-full px-12"
             >
-              <CarouselContent className="-ml-8">
+              <CarouselContent className="-ml-12 py-12">
                 {processSteps.map((step, index) => (
-                  <CarouselItem key={step.id} className="pl-8 basis-full md:basis-1/2 lg:basis-1/3">
-                    <div className="group mx-auto w-fit" style={{
+                  <CarouselItem key={step.id} className="pl-12 basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                    <div className="group mx-auto w-fit px-8" style={{
                       transform: `rotate(${step.angle})`,
                       animationDelay: `${index * 0.2}s`
                     }}>
@@ -216,8 +217,8 @@ const WhyDifferent = () => {
               </CarouselContent>
               
               {/* Enhanced carousel controls */}
-              <CarouselPrevious className="absolute -left-20 top-1/2 -translate-y-1/2 w-14 h-14 border-2 border-indigo-300 bg-white hover:bg-indigo-50 hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-200/50 transition-all duration-300 text-indigo-500 hover:text-indigo-600" />
-              <CarouselNext className="absolute -right-20 top-1/2 -translate-y-1/2 w-14 h-14 border-2 border-indigo-300 bg-white hover:bg-indigo-50 hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-200/50 transition-all duration-300 text-indigo-500 hover:text-indigo-600" />
+              <CarouselPrevious className="absolute -left-16 top-1/2 -translate-y-1/2 w-14 h-14 border-2 border-indigo-500 bg-white hover:bg-indigo-50 hover:border-indigo-600 hover:shadow-lg hover:shadow-indigo-300/50 transition-all duration-300 text-indigo-600 hover:text-indigo-700" />
+              <CarouselNext className="absolute -right-16 top-1/2 -translate-y-1/2 w-14 h-14 border-2 border-indigo-500 bg-white hover:bg-indigo-50 hover:border-indigo-600 hover:shadow-lg hover:shadow-indigo-300/50 transition-all duration-300 text-indigo-600 hover:text-indigo-700" />
             </Carousel>
           </div>
         </div>
