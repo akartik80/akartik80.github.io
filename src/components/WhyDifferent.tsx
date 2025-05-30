@@ -158,7 +158,7 @@ const WhyDifferent = () => {
         </div>
 
         {/* Process Section - Moved from Process.tsx */}
-        <div className="py-20">
+        <div className="py-0">
           <div className="process-container max-w-6xl mx-auto">
             {/* Top row - 3 phones */}
             <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 mb-12">
