@@ -31,25 +31,18 @@ const differentiators = [{
   description: "We blend education + storytelling so you show up as credible, not preachy.",
 }];
 
+// Only include reels with actual videos loaded
 const processSteps = [{
   id: 1,
   videoUrl: "https://drive.google.com/uc?export=download&id=15f4qyZb16A-JJppss0YjQvTBT87pQV7j",
   thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-  angle: "-12deg"
+  angle: "-8deg"
 }, {
   id: 2,
   videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
   thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
-  angle: "8deg"
-}, {
-  id: 3,
-  thumbnail: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-  angle: "-8deg"
-}, {
-  id: 4,
-  thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
-  angle: "6deg"
-}];
+  angle: "4deg"
+}].filter(step => step.videoUrl); // Only include items with actual videos
 
 const WhyDifferent = () => {
   useEffect(() => {
@@ -88,7 +81,7 @@ const WhyDifferent = () => {
 
   return (
     <>
-      <section id="why-different" className="py-24 bg-gradient-to-br from-[#678bd4]/10 via-white to-[#678bd4]/5 overflow-hidden relative">
+      <section id="why-different" className="py-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 overflow-hidden relative">
         <div className="container mx-auto px-4 relative">
           {/* Decorative elements */}
           <div className="absolute -top-20 -left-20 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
@@ -144,10 +137,14 @@ const WhyDifferent = () => {
       <section className="py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden relative">
         <div className="container mx-auto px-4 relative">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 reveal-on-scroll">
-            <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-5xl">Scroll Stopping Founder Reels</span>
+            <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-5xl">Scroll-Stopping Founder Reels</span>
           </h2>
 
-          <div className="max-w-6xl mx-auto reveal-on-scroll">
+          <div className="max-w-6xl mx-auto reveal-on-scroll relative">
+            {/* Fade gradients on edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+            
             <Carousel
               opts={{
                 align: "start",
@@ -155,10 +152,10 @@ const WhyDifferent = () => {
               }}
               className="w-full"
             >
-              <CarouselContent className="-ml-4">
+              <CarouselContent className="-ml-8">
                 {processSteps.map((step, index) => (
-                  <CarouselItem key={step.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/4">
-                    <div className="group" style={{
+                  <CarouselItem key={step.id} className="pl-8 basis-full md:basis-1/2 lg:basis-1/3">
+                    <div className="group mx-auto w-fit" style={{
                       transform: `rotate(${step.angle})`,
                       animationDelay: `${index * 0.2}s`
                     }}>
@@ -168,25 +165,21 @@ const WhyDifferent = () => {
                         <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
                           {/* Video content */}
                           <div className="absolute inset-0">
-                            {step.videoUrl ? (
-                              <video 
-                                className="w-full h-full object-cover" 
-                                autoPlay 
-                                loop 
-                                muted
-                                playsInline
-                                preload="metadata"
-                                webkit-playsinline="true"
-                                x5-playsinline="true"
-                                controls={false}
-                                disablePictureInPicture
-                              >
-                                <source src={step.videoUrl} type="video/mp4" />
-                                <img src={step.thumbnail} alt="Video content" className="w-full h-full object-cover" />
-                              </video>
-                            ) : (
-                              <img src={step.thumbnail} alt="Content" className="w-full h-full object-cover" />
-                            )}
+                            <video 
+                              className="w-full h-full object-cover" 
+                              autoPlay 
+                              loop 
+                              muted
+                              playsInline
+                              preload="metadata"
+                              webkit-playsinline="true"
+                              x5-playsinline="true"
+                              controls={false}
+                              disablePictureInPicture
+                            >
+                              <source src={step.videoUrl} type="video/mp4" />
+                              <img src={step.thumbnail} alt="Video content" className="w-full h-full object-cover" />
+                            </video>
                             
                             {/* Subtle overlay gradient */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10"></div>
@@ -212,9 +205,9 @@ const WhyDifferent = () => {
                 ))}
               </CarouselContent>
               
-              {/* Custom styled carousel controls */}
-              <CarouselPrevious className="absolute -left-16 top-1/2 -translate-y-1/2 w-12 h-12 border-2 border-indigo-200 bg-white hover:bg-indigo-50 hover:border-indigo-300 transition-all duration-300" />
-              <CarouselNext className="absolute -right-16 top-1/2 -translate-y-1/2 w-12 h-12 border-2 border-indigo-200 bg-white hover:bg-indigo-50 hover:border-indigo-300 transition-all duration-300" />
+              {/* Enhanced carousel controls */}
+              <CarouselPrevious className="absolute -left-20 top-1/2 -translate-y-1/2 w-14 h-14 border-2 border-indigo-300 bg-white hover:bg-indigo-50 hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-200/50 transition-all duration-300 text-indigo-500 hover:text-indigo-600" />
+              <CarouselNext className="absolute -right-20 top-1/2 -translate-y-1/2 w-14 h-14 border-2 border-indigo-300 bg-white hover:bg-indigo-50 hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-200/50 transition-all duration-300 text-indigo-500 hover:text-indigo-600" />
             </Carousel>
           </div>
         </div>
