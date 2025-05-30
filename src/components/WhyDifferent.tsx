@@ -93,6 +93,13 @@ const WhyDifferent = () => {
     }, observerOptions);
     const elements = document.querySelectorAll('.process-container, .reveal-on-scroll');
     elements.forEach(el => observer.observe(el));
+
+    // Add video autoplay enforcement
+    const videos = document.querySelectorAll('video[autoplay]');
+    videos.forEach(video => {
+      video.play().catch(console.log);
+    });
+
     return () => {
       elements.forEach(el => observer.unobserve(el));
     };
@@ -185,6 +192,10 @@ const WhyDifferent = () => {
                             muted
                             playsInline
                             preload="metadata"
+                            webkit-playsinline="true"
+                            x5-playsinline="true"
+                            controls={false}
+                            disablePictureInPicture
                           >
                             <source src={step.videoUrl} type="video/mp4" />
                             <img src={step.thumbnail} alt={step.title} className="w-full h-full object-cover" />
@@ -231,7 +242,6 @@ const WhyDifferent = () => {
                     
                     {/* Phone details */}
                     <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-300 rounded-full"></div>
-                  </div>
                   
                   {/* Floating elements for 3D effect */}
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-autthia-purple/20 rounded-full blur-sm animate-float-slow"></div>
