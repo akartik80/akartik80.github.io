@@ -47,7 +47,7 @@ const Index = () => {
       <WhyDifferent />
       {/* How It Works */}
       <Process />
-      {/* The Autthia Effect */}
+      {/* The Autthia Effect + Scroll-Stopping Founder Reels */}
       <StatsShowcase />
       {/* Scroll-Stopping Founder Reels */}
       <ProofShowcase />
