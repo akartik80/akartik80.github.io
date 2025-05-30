@@ -1,9 +1,7 @@
-
 import React, { useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Heart, MessageCircle, Instagram, Star, Sparkles, Zap, Wand2, CircleDashed, Hexagon, Play } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
 const FloatingElement = ({
   children,
   className = "",
@@ -11,7 +9,6 @@ const FloatingElement = ({
 }) => <div className={`absolute ${className} ${animationClass}`}>
     {children}
   </div>;
-
 const Hero = () => {
   useEffect(() => {
     const observerOptions = {
@@ -31,7 +28,6 @@ const Hero = () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
   return <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-[#678bd4]/10 via-white to-[#678bd4]/5">
       {/* Decorative pattern background */}
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
@@ -102,10 +98,10 @@ const Hero = () => {
             <span className="absolute -left-10 top-0 text-[#678bd4]/30 opacity-30 text-8xl font-bold">"</span>
             <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">We Make </span>
             <span className="bg-gradient-to-r from-[#678bd4]/60 via-[#678bd4] to-[#678bd4]/80 bg-clip-text text-transparent relative inline-block">
-              <span className="doodle-circle text-indigo-300">Founders</span>
+              <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">Founders</span>
             </span>
             <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent"> Impossible to Scroll Past on </span>
-            <span className="text-indigo-300 relative inline-block">
+            <span className="bg-gradient-to-r from-[#678bd4] to-[#678bd4]/70 bg-clip-text text-transparent relative inline-block">
               <span className="doodle-circle">Instagram</span>
               <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 bg-white rounded-xl shadow-lg p-1 animate-float">
                 <Instagram className="h-5 w-5 text-[#678bd4]" />
@@ -163,5 +159,4 @@ const Hero = () => {
       </div>
     </section>;
 };
-
 export default Hero;
