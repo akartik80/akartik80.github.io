@@ -5,30 +5,30 @@ import { Eye, Users, Instagram, Zap } from 'lucide-react';
 const differentiators = [{
   id: 1,
   icon: <Eye className="h-8 w-8" />,
-  title: "We Know Audience Psychology (Deeply)",
+  title: "Know Audience Psychology (Deeply)",
   description: "We decode how attention works online—and create content that keeps it.",
-  bgColor: "bg-blue-100",
+  bgColor: "bg-[#678bd4]",
   position: "top-8 left-4"
 }, {
   id: 2,
   icon: <Users className="h-8 w-8" />,
-  title: "We Work With Founders (Only)",
+  title: "Work With Founders (Only)",
   description: "Our clients are all founders, so we get your pace, your pressure, and your purpose.",
-  bgColor: "bg-purple-100",
+  bgColor: "bg-[#678bd4]/80",
   position: "top-20 left-1/4"
 }, {
   id: 3,
   icon: <Instagram className="h-8 w-8" />,
-  title: "We Focus Only on Instagram (And Dominate It)",
+  title: "Focus Only on Instagram (And Dominate It)",
   description: "Instagram isn't one of many things we do—it's the only thing we do.",
-  bgColor: "bg-pink-100",
+  bgColor: "bg-[#678bd4]/60",
   position: "top-4 left-2/4"
 }, {
   id: 4,
   icon: <Zap className="h-8 w-8" />,
-  title: "We Make the Process Addictive (In a Good Way)",
+  title: "Make the Process Addictive (In a Good Way)",
   description: "We mix storytelling and education so you come across as human and credible—never preachy.",
-  bgColor: "bg-cyan-100",
+  bgColor: "bg-[#678bd4]",
   position: "top-16 right-4"
 }];
 const WhyDifferent = () => {
