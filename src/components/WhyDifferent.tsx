@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Eye, Users, Instagram, Zap } from 'lucide-react';
 
@@ -32,7 +31,6 @@ const differentiators = [{
   bgColor: "bg-[#678bd4]/80",
   position: "top-16 right-4"
 }];
-
 const processSteps = [{
   id: 1,
   title: "ELLIOT HACKER",
@@ -68,7 +66,6 @@ const processSteps = [{
   thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43",
   angle: "8deg"
 }];
-
 const WhyDifferent = () => {
   useEffect(() => {
     const observerOptions = {
@@ -96,9 +93,7 @@ const WhyDifferent = () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  return (
-    <section id="why-different" className="py-24 bg-gradient-to-b from-white via-autthia-blue/5 to-white overflow-hidden relative">
+  return <section id="why-different" className="py-24 bg-gradient-to-b from-white via-autthia-blue/5 to-white overflow-hidden relative">
       <div className="container mx-auto px-4 relative">
         {/* Decorative elements */}
         <div className="absolute -top-20 -left-20 w-64 h-64 bg-autthia-light-purple rounded-full blur-3xl opacity-10"></div>
@@ -232,52 +227,7 @@ const WhyDifferent = () => {
               animationDelay: `${(index + 3) * 0.2}s`
             }}>
                   {/* Phone mockup container */}
-                  <div className="relative w-64 h-[450px] bg-black rounded-[2.5rem] p-2 shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-3xl group-hover:rotate-0">
-                    {/* Phone screen */}
-                    <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
-                      {/* Video content */}
-                      <div className="absolute inset-0">
-                        <img src={step.thumbnail} alt={step.title} className="w-full h-full object-cover" />
-                        
-                        {/* Overlay gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20"></div>
-                        
-                        {/* Content overlay */}
-                        <div className="absolute inset-0 flex flex-col justify-between p-4 text-white">
-                          {/* Top content */}
-                          <div className="flex justify-between items-start">
-                            <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                              <div className="w-4 h-4 bg-white rounded-full"></div>
-                            </div>
-                          </div>
-                          
-                          {/* Bottom content */}
-                          <div className="space-y-2">
-                            <h3 className="font-bold text-lg leading-tight">{step.title}</h3>
-                            {step.subtitle && <p className="text-sm text-white/80">{step.subtitle}</p>}
-                            <div className="flex items-center justify-between">
-                              <span className="text-xs text-white/60">{step.views}</span>
-                              <div className="flex space-x-1">
-                                <div className="w-1 h-1 bg-white/60 rounded-full"></div>
-                                <div className="w-1 h-1 bg-white rounded-full"></div>
-                                <div className="w-1 h-1 bg-white/60 rounded-full"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Play indicator */}
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                            <div className="w-0 h-0 border-l-4 border-r-0 border-t-2 border-b-2 border-l-white border-t-transparent border-b-transparent ml-1"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Phone details */}
-                    <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-300 rounded-full"></div>
-                  </div>
+                  
                   
                   {/* Floating elements for 3D effect */}
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-autthia-purple/20 rounded-full blur-sm animate-float-slow"></div>
@@ -287,8 +237,6 @@ const WhyDifferent = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhyDifferent;
