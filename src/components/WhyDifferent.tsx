@@ -8,7 +8,7 @@ const differentiators = [{
   icon: <Eye className="h-8 w-8" />,
   title: "Know Audience Psychology (Deeply)",
   description: "We decode how attention works online, and create content that keeps it.",
-  bgColor: "bg-[#678bd4]",
+  bgColor: "bg-[#678bd4]/60",
   position: "top-8 left-4"
 }, {
   id: 2,
@@ -29,7 +29,7 @@ const differentiators = [{
   icon: <Zap className="h-8 w-8" />,
   title: "Use 'Edutelling'™ (Strategically)",
   description: "We mix storytelling and education so you come across as human and credible, never preachy.",
-  bgColor: "bg-[#678bd4]",
+  bgColor: "bg-[#678bd4]/80",
   position: "top-16 right-4"
 }];
 
@@ -125,7 +125,7 @@ const WhyDifferent = () => {
               transform: 'translateZ(0) perspective(1000px) rotateX(5deg)'
             }}>
                   <div className="flex flex-col items-center text-center p-8 h-full justify-center">
-                    <div className="text-yellow-300 drop-shadow-lg group-hover:text-gray-800 transition-colors duration-300 mb-4 filter brightness-110">
+                    <div className="text-indigo-300 drop-shadow-lg group-hover:text-gray-800 transition-colors duration-300 mb-4 filter brightness-110">
                       {item.icon}
                     </div>
                     <h3 className="text-lg font-bold mb-3 text-white group-hover:text-gray-800 transition-colors duration-300">
@@ -149,7 +149,7 @@ const WhyDifferent = () => {
           transform: 'translateZ(0) perspective(1000px) rotateX(5deg)'
         }}>
               <div className="flex flex-col items-center text-center p-8 h-full justify-center">
-                <div className="text-yellow-300 drop-shadow-lg group-hover:text-gray-800 transition-colors duration-300 mb-4 filter brightness-110">
+                <div className="text-indigo-300 drop-shadow-lg group-hover:text-gray-800 transition-colors duration-300 mb-4 filter brightness-110">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-white group-hover:text-gray-800 transition-colors duration-300">
