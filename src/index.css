@@ -136,6 +136,49 @@
   .autthia-card {
     @apply bg-white rounded-2xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl;
   }
+
+  /* Premium Card Design */
+  .premium-card {
+    @apply bg-white rounded-3xl p-8 shadow-lg max-w-sm w-full;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      0 4px 16px rgba(103, 139, 212, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .premium-card:hover {
+    box-shadow: 
+      0 20px 60px rgba(0, 0, 0, 0.12),
+      0 8px 32px rgba(103, 139, 212, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 1.5rem;
+    background: linear-gradient(135deg, 
+      rgba(103, 139, 212, 0.1) 0%, 
+      rgba(155, 135, 245, 0.05) 50%, 
+      rgba(214, 188, 250, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .premium-card:hover::before {
+    opacity: 1;
+  }
   
   .process-item {
     @apply relative flex flex-col items-center;
@@ -234,6 +277,10 @@
     .circle-cloud-card {
       width: 260px;
       height: 260px;
+    }
+    
+    .premium-card {
+      @apply p-6;
     }
   }
 

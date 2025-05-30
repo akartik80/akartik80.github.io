@@ -2,35 +2,31 @@
 import React, { useEffect } from 'react';
 import { Eye, Users, Instagram, Zap } from 'lucide-react';
 
-// Data for the four circle cards
+// Data for the four staggered cards
 const differentiators = [{
   id: 1,
-  icon: <Eye className="h-8 w-8" />,
+  emoji: "🧠",
+  icon: <Eye className="h-6 w-6" />,
   title: "Know Audience Psychology (Deeply)",
   description: "We decode how attention works online, and create content that keeps it.",
-  bgColor: "bg-[#678bd4]/60",
-  position: "top-8 left-4"
 }, {
   id: 2,
-  icon: <Users className="h-8 w-8" />,
+  emoji: "🤝",
+  icon: <Users className="h-6 w-6" />,
   title: "Work With Founders (Exclusively)",
-  description: "Our clients are all founders, so we get your pace, your pressure, and your purpose.",
-  bgColor: "bg-[#678bd4]/80",
-  position: "top-20 left-1/4"
+  description: "Our clients are all founders. We get your pace, your pressure, and your purpose.",
 }, {
   id: 3,
-  icon: <Instagram className="h-8 w-8" />,
+  emoji: "📱",
+  icon: <Instagram className="h-6 w-6" />,
   title: "Focus On Instagram (Only)",
-  description: "Instagram isn't one of many things we do, it's the only thing we do.",
-  bgColor: "bg-[#678bd4]/60",
-  position: "top-4 left-2/4"
+  description: "Instagram isn't one of many platforms, it's our only obsession.",
 }, {
   id: 4,
-  icon: <Zap className="h-8 w-8" />,
+  emoji: "✨",
+  icon: <Zap className="h-6 w-6" />,
   title: "Use 'Edutelling'™ (Strategically)",
-  description: "We mix storytelling and education so you come across as human and credible, never preachy.",
-  bgColor: "bg-[#678bd4]/80",
-  position: "top-16 right-4"
+  description: "We blend education + storytelling so you show up as credible, not preachy.",
 }];
 
 const processSteps = [{
@@ -108,77 +104,144 @@ const WhyDifferent = () => {
 
   return (
     <>
-      <section id="why-different" className="py-24 bg-gradient-to-b from-white via-autthia-blue/5 to-white overflow-hidden relative">
+      <section id="why-different" className="py-24 bg-gradient-to-br from-purple-50 via-pink-25 to-blue-50 overflow-hidden relative">
         <div className="container mx-auto px-4 relative">
           {/* Decorative elements */}
-          <div className="absolute -top-20 -left-20 w-64 h-64 bg-autthia-light-purple rounded-full blur-3xl opacity-10"></div>
-          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-autthia-purple rounded-full blur-3xl opacity-10"></div>
+          <div className="absolute -top-20 -left-20 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-pink-200/30 rounded-full blur-3xl"></div>
           
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-6 reveal-on-scroll">
-            <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-5xl">The Autthia Effect</span>
+            <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold">The Autthia Effect</span>
           </h2>
           
-          <div className="max-w-3xl mx-auto text-center mb-16 reveal-on-scroll">
-            <p className="text-muted-foreground text-xl">Most agencies tell you to "post more," "teach more," or "sell more." But we disagree with that approach, instead we:</p>
+          <div className="max-w-3xl mx-auto text-center mb-20 reveal-on-scroll">
+            <p className="text-gray-600 text-xl leading-relaxed">Most agencies tell you to "post more," "teach more," or "sell more." But we disagree with that approach, instead we:</p>
           </div>
           
-          {/* Desktop: Horizontal Layout with Vertical Variance */}
-          <div className="hidden md:block relative min-h-[400px] reveal-on-scroll">
-            <div className="flex justify-between items-start max-w-6xl mx-auto relative">
-              {differentiators.map((item, index) => {
-              // Define vertical offsets for each card to create floating effect
-              const verticalOffsets = ['translate-y-4', '-translate-y-2', 'translate-y-6', '-translate-y-4'];
-              return (
-                <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow ${verticalOffsets[index]} hover:bg-indigo-300 transition-colors duration-300 shadow-2xl`} style={{
-                  animationDelay: `${index * 0.5}s`,
-                  animationDuration: `${6 + index}s`,
-                  boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)',
-                  transform: 'translateZ(0) perspective(1000px) rotateX(5deg)'
-                }}>
-                  <div className="flex flex-col items-center text-center p-8 h-full justify-center">
-                    <div className="text-indigo-300 drop-shadow-lg group-hover:text-gray-800 transition-colors duration-300 mb-4 filter brightness-110">
-                      {item.icon}
+          {/* Desktop: Staggered Grid Layout */}
+          <div className="hidden lg:block max-w-7xl mx-auto reveal-on-scroll">
+            <div className="grid grid-cols-2 gap-x-16 gap-y-12 relative">
+              {/* Top row - 2 cards */}
+              <div className="flex justify-center">
+                <div className="premium-card group transform hover:scale-105 hover:shadow-2xl transition-all duration-500">
+                  <div className="text-4xl mb-4">{differentiators[0].emoji}</div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
+                      {differentiators[0].icon}
                     </div>
-                    <h3 className="text-lg font-bold mb-3 text-white group-hover:text-gray-800 transition-colors duration-300">
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
+                    {differentiators[0].title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {differentiators[0].description}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex justify-center mt-8">
+                <div className="premium-card group transform hover:scale-105 hover:shadow-2xl transition-all duration-500">
+                  <div className="text-4xl mb-4">{differentiators[1].emoji}</div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
+                      {differentiators[1].icon}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
+                    {differentiators[1].title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {differentiators[1].description}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Bottom row - 2 cards */}
+              <div className="flex justify-center -mt-4">
+                <div className="premium-card group transform hover:scale-105 hover:shadow-2xl transition-all duration-500">
+                  <div className="text-4xl mb-4">{differentiators[2].emoji}</div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
+                      {differentiators[2].icon}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
+                    {differentiators[2].title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {differentiators[2].description}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex justify-center">
+                <div className="premium-card group transform hover:scale-105 hover:shadow-2xl transition-all duration-500">
+                  <div className="text-4xl mb-4">{differentiators[3].emoji}</div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
+                      {differentiators[3].icon}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
+                    {differentiators[3].title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {differentiators[3].description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Tablet: 2x2 Grid */}
+          <div className="hidden md:block lg:hidden max-w-4xl mx-auto reveal-on-scroll">
+            <div className="grid grid-cols-2 gap-8">
+              {differentiators.map((item, index) => (
+                <div key={item.id} className="flex justify-center">
+                  <div className="premium-card group transform hover:scale-105 hover:shadow-2xl transition-all duration-500">
+                    <div className="text-4xl mb-4">{item.emoji}</div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
+                        {item.icon}
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-white/90 group-hover:text-gray-700 transition-colors duration-300">
+                    <p className="text-gray-600 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
                 </div>
-              );
-            })}
+              ))}
             </div>
           </div>
           
           {/* Mobile: Vertical Stack */}
           <div className="md:hidden space-y-8 reveal-on-scroll">
             {differentiators.map((item, index) => (
-              <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow mx-auto hover:bg-indigo-300 transition-colors duration-300 shadow-2xl`} style={{
-                animationDelay: `${index * 0.3}s`,
-                animationDuration: `${6 + index}s`,
-                boxShadow: '0 25px 50px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)',
-                transform: 'translateZ(0) perspective(1000px) rotateX(5deg)'
+              <div key={item.id} className="premium-card group mx-auto transform hover:scale-105 hover:shadow-2xl transition-all duration-500" style={{
+                animationDelay: `${index * 0.2}s`
               }}>
-                <div className="flex flex-col items-center text-center p-8 h-full justify-center">
-                  <div className="text-indigo-300 drop-shadow-lg group-hover:text-gray-800 transition-colors duration-300 mb-4 filter brightness-110">
+                <div className="text-4xl mb-4">{item.emoji}</div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-[#678bd4] group-hover:scale-110 transition-transform duration-300">
                     {item.icon}
                   </div>
-                  <h3 className="text-lg font-bold mb-3 text-white group-hover:text-gray-800 transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-white/90 group-hover:text-gray-700 transition-colors duration-300">
-                    {item.description}
-                  </p>
                 </div>
+                <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* New Reels Section */}
+      {/* Reels Section */}
       <section className="py-24 bg-gradient-to-b from-white to-autthia-blue/5 overflow-hidden relative">
         <div className="container mx-auto px-4 relative">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 reveal-on-scroll">
