@@ -95,10 +95,10 @@ const WhyDifferent = () => {
     const elements = document.querySelectorAll('.process-container, .reveal-on-scroll');
     elements.forEach(el => observer.observe(el));
 
-    // Add video autoplay enforcement
+    // Add video autoplay enforcement with proper typing
     const videos = document.querySelectorAll('video[autoplay]');
     videos.forEach(video => {
-      video.play().catch(console.log);
+      (video as HTMLVideoElement).play().catch(console.log);
     });
 
     return () => {
