@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Eye, Users, Instagram, Zap } from 'lucide-react';
 
@@ -185,6 +184,7 @@ const WhyDifferent = () => {
                             loop 
                             muted
                             playsInline
+                            preload="metadata"
                           >
                             <source src={step.videoUrl} type="video/mp4" />
                             <img src={step.thumbnail} alt={step.title} className="w-full h-full object-cover" />
