@@ -1,6 +1,13 @@
 
 import React, { useEffect } from 'react';
-import { Eye, Users, Instagram, Zap } from 'lucide-react';
+import { Eye, Users, Instagram, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 // Data for the four circle cards
 const differentiators = [{
@@ -33,40 +40,27 @@ const differentiators = [{
   position: "top-16 right-4"
 }];
 
-const processSteps = [{
+// Updated video data with Google Drive URLs converted to direct video URLs
+const videoSteps = [{
   id: 1,
   title: "ELLIOT HACKER",
   views: "2.4M+ Views",
-  thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+  videoUrl: "https://drive.google.com/uc?export=download&id=15f4qyZb16A-JJppss0YjQvTBT87pQV7j",
   angle: "-12deg"
 }, {
   id: 2,
   title: "REID HOFFMAN",
   subtitle: "Co-founder LinkedIn",
   views: "3.2M+ Views",
-  thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+  videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
   angle: "0deg"
 }, {
   id: 3,
-  title: "THEY JUST",
-  subtitle: "ACQUIRED FM",
-  views: "4.9M+ Views",
-  thumbnail: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-  angle: "12deg"
-}, {
-  id: 4,
   title: "STARTUP GROWTH",
   subtitle: "Behind the Scenes",
   views: "1.8M+ Views",
   thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81",
-  angle: "-8deg"
-}, {
-  id: 5,
-  title: "TECH INSIGHTS",
-  subtitle: "Industry Leaders",
-  views: "3.6M+ Views",
-  thumbnail: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43",
-  angle: "8deg"
+  angle: "12deg"
 }];
 
 const WhyDifferent = () => {
@@ -162,128 +156,91 @@ const WhyDifferent = () => {
             </div>)}
         </div>
 
-        {/* Process Section - Moved from Process.tsx */}
+        {/* Video Carousel Section */}
         <div className="py-20">
           <div className="process-container max-w-6xl mx-auto">
-            {/* Top row - 3 phones */}
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 mb-12">
-              {processSteps.slice(0, 3).map((step, index) => <div key={step.id} className="process-item reveal-on-scroll opacity-0 group" style={{
-              transform: `rotate(${step.angle})`,
-              animationDelay: `${index * 0.2}s`
-            }}>
-                  {/* Phone mockup container */}
-                  <div className="relative w-64 h-[450px] bg-black rounded-[2.5rem] p-2 shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-3xl group-hover:rotate-0">
-                    {/* Phone screen */}
-                    <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
-                      {/* Video content */}
-                      <div className="absolute inset-0">
-                        <img src={step.thumbnail} alt={step.title} className="w-full h-full object-cover" />
-                        
-                        {/* Overlay gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20"></div>
-                        
-                        {/* Content overlay */}
-                        <div className="absolute inset-0 flex flex-col justify-between p-4 text-white">
-                          {/* Top content */}
-                          <div className="flex justify-between items-start">
-                            <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                              <div className="w-4 h-4 bg-white rounded-full"></div>
-                            </div>
-                          </div>
+            <Carousel className="w-full relative">
+              <CarouselContent className="flex items-center justify-center gap-8 lg:gap-16">
+                {videoSteps.map((step, index) => (
+                  <CarouselItem key={step.id} className="flex-shrink-0 process-item reveal-on-scroll opacity-0 group" style={{
+                    transform: `rotate(${step.angle})`,
+                    animationDelay: `${index * 0.2}s`
+                  }}>
+                    {/* Phone mockup container */}
+                    <div className="relative w-64 h-[450px] bg-black rounded-[2.5rem] p-2 shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-3xl group-hover:rotate-0">
+                      {/* Phone screen */}
+                      <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
+                        {/* Video or image content */}
+                        <div className="absolute inset-0">
+                          {step.videoUrl ? (
+                            <video 
+                              src={step.videoUrl}
+                              className="w-full h-full object-cover"
+                              autoPlay 
+                              loop 
+                              muted 
+                              playsInline
+                              style={{ objectFit: 'cover' }}
+                            />
+                          ) : (
+                            <img src={step.thumbnail} alt={step.title} className="w-full h-full object-cover" />
+                          )}
                           
-                          {/* Bottom content */}
-                          <div className="space-y-2">
-                            <h3 className="font-bold text-lg leading-tight">{step.title}</h3>
-                            {step.subtitle && <p className="text-sm text-white/80">{step.subtitle}</p>}
-                            <div className="flex items-center justify-between">
-                              <span className="text-xs text-white/60">{step.views}</span>
-                              <div className="flex space-x-1">
-                                <div className="w-1 h-1 bg-white/60 rounded-full"></div>
-                                <div className="w-1 h-1 bg-white rounded-full"></div>
-                                <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+                          {/* Overlay gradient */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20"></div>
+                          
+                          {/* Content overlay */}
+                          <div className="absolute inset-0 flex flex-col justify-between p-4 text-white">
+                            {/* Top content */}
+                            <div className="flex justify-between items-start">
+                              <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <div className="w-4 h-4 bg-white rounded-full"></div>
+                              </div>
+                            </div>
+                            
+                            {/* Bottom content */}
+                            <div className="space-y-2">
+                              <h3 className="font-bold text-lg leading-tight">{step.title}</h3>
+                              {step.subtitle && <p className="text-sm text-white/80">{step.subtitle}</p>}
+                              <div className="flex items-center justify-between">
+                                <span className="text-xs text-white/60">{step.views}</span>
+                                <div className="flex space-x-1">
+                                  <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+                                  <div className="w-1 h-1 bg-white rounded-full"></div>
+                                  <div className="w-1 h-1 bg-white/60 rounded-full"></div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        
-                        {/* Play indicator */}
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                            <div className="w-0 h-0 border-l-4 border-r-0 border-t-2 border-b-2 border-l-white border-t-transparent border-b-transparent ml-1"></div>
-                          </div>
-                        </div>
                       </div>
+                      
+                      {/* Phone details */}
+                      <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-300 rounded-full"></div>
                     </div>
                     
-                    {/* Phone details */}
-                    <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-300 rounded-full"></div>
-                  </div>
-                  
-                  {/* Floating elements for 3D effect */}
-                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-autthia-purple/20 rounded-full blur-sm animate-float-slow"></div>
-                  <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-autthia-blue/20 rounded-full blur-sm animate-float-fast"></div>
-                </div>)}
-            </div>
-
-            {/* Bottom row - 2 phones staggered */}
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-32">
-              {processSteps.slice(3, 5).map((step, index) => <div key={step.id} className="process-item reveal-on-scroll opacity-0 group" style={{
-              transform: `rotate(${step.angle})`,
-              animationDelay: `${(index + 3) * 0.2}s`
-            }}>
-                  {/* Phone mockup container */}
-                  <div className="relative w-64 h-[450px] bg-black rounded-[2.5rem] p-2 shadow-2xl transform transition-all duration-500 hover:scale-105 hover:shadow-3xl group-hover:rotate-0">
-                    {/* Phone screen */}
-                    <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden relative">
-                      {/* Video content */}
-                      <div className="absolute inset-0">
-                        <img src={step.thumbnail} alt={step.title} className="w-full h-full object-cover" />
-                        
-                        {/* Overlay gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20"></div>
-                        
-                        {/* Content overlay */}
-                        <div className="absolute inset-0 flex flex-col justify-between p-4 text-white">
-                          {/* Top content */}
-                          <div className="flex justify-between items-start">
-                            <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                              <div className="w-4 h-4 bg-white rounded-full"></div>
-                            </div>
-                          </div>
-                          
-                          {/* Bottom content */}
-                          <div className="space-y-2">
-                            <h3 className="font-bold text-lg leading-tight">{step.title}</h3>
-                            {step.subtitle && <p className="text-sm text-white/80">{step.subtitle}</p>}
-                            <div className="flex items-center justify-between">
-                              <span className="text-xs text-white/60">{step.views}</span>
-                              <div className="flex space-x-1">
-                                <div className="w-1 h-1 bg-white/60 rounded-full"></div>
-                                <div className="w-1 h-1 bg-white rounded-full"></div>
-                                <div className="w-1 h-1 bg-white/60 rounded-full"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        
-                        {/* Play indicator */}
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                            <div className="w-0 h-0 border-l-4 border-r-0 border-t-2 border-b-2 border-l-white border-t-transparent border-b-transparent ml-1"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Phone details */}
-                    <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gray-300 rounded-full"></div>
-                  </div>
-                  
-                  {/* Floating elements for 3D effect */}
-                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-autthia-purple/20 rounded-full blur-sm animate-float-slow"></div>
-                  <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-autthia-blue/20 rounded-full blur-sm animate-float-fast"></div>
-                </div>)}
-            </div>
+                    {/* Floating elements for 3D effect */}
+                    <div className="absolute -top-4 -right-4 w-8 h-8 bg-autthia-purple/20 rounded-full blur-sm animate-float-slow"></div>
+                    <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-autthia-blue/20 rounded-full blur-sm animate-float-fast"></div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              
+              {/* Custom styled navigation buttons */}
+              <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-[#678bd4] hover:bg-[#678bd4]/90 border-2 border-[#678bd4] shadow-lg hover:shadow-xl transition-all duration-300" style={{
+                filter: 'drop-shadow(0 0 20px #678bd4) drop-shadow(0 0 40px #678bd4)',
+                fontWeight: 'bold'
+              }}>
+                <ChevronLeft className="h-6 w-6 text-white font-bold" strokeWidth={3} />
+              </CarouselPrevious>
+              
+              <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-[#678bd4] hover:bg-[#678bd4]/90 border-2 border-[#678bd4] shadow-lg hover:shadow-xl transition-all duration-300" style={{
+                filter: 'drop-shadow(0 0 20px #678bd4) drop-shadow(0 0 40px #678bd4)',
+                fontWeight: 'bold'
+              }}>
+                <ChevronRight className="h-6 w-6 text-white font-bold" strokeWidth={3} />
+              </CarouselNext>
+            </Carousel>
           </div>
         </div>
       </div>
