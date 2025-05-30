@@ -99,7 +99,7 @@ const WhyDifferent = () => {
 
   return (
     <>
-      <section id="why-different" className="py-24 bg-gradient-to-br from-purple-50 via-pink-25 to-blue-50 overflow-hidden relative">
+      <section id="why-different" className="py-24 bg-gradient-to-br from-[#678bd4]/10 via-white to-[#678bd4]/5 overflow-hidden relative">
         <div className="container mx-auto px-4 relative">
           {/* Decorative elements */}
           <div className="absolute -top-20 -left-20 w-64 h-64 bg-purple-200/30 rounded-full blur-3xl"></div>
@@ -113,11 +113,11 @@ const WhyDifferent = () => {
             <p className="text-gray-600 text-xl leading-relaxed">Most agencies tell you to "post more," "teach more," or "sell more." But we disagree with that approach, instead we:</p>
           </div>
           
-          {/* Desktop & Tablet: Horizontal Line */}
+          {/* Desktop & Tablet: Horizontal Line with staggered positioning */}
           <div className="hidden md:block max-w-7xl mx-auto reveal-on-scroll">
-            <div className="grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-4 gap-6 items-start">
               {differentiators.map((item, index) => (
-                <div key={item.id} className="flex justify-center">
+                <div key={item.id} className={`flex justify-center ${index === 1 || index === 3 ? 'mt-8' : ''}`}>
                   <div className="premium-card group transform hover:scale-105 hover:shadow-2xl transition-all duration-500">
                     <div className="text-4xl mb-4">{item.emoji}</div>
                     <h3 className="text-xl font-bold mb-4 text-gray-800 leading-tight">
