@@ -1,7 +1,5 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { Eye, Users, Instagram, Zap, Diamond, Star, Smile } from 'lucide-react';
-
 const circleData = [{
   id: 1,
   title: "We Know Audience Psychology",
@@ -55,7 +53,6 @@ const videos = [{
   thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
   client: "Jessica Smith"
 }];
-
 const FloatingIcon = ({
   Icon,
   className
@@ -63,7 +60,6 @@ const FloatingIcon = ({
   Icon: React.ComponentType<any>;
   className: string;
 }) => <Icon className={`absolute text-autthia-purple/20 ${className}`} size={20} />;
-
 const CircleCard = ({
   circle,
   index
@@ -73,7 +69,6 @@ const CircleCard = ({
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -84,25 +79,15 @@ const CircleCard = ({
     }, {
       threshold: 0.3
     });
-    
     if (cardRef.current) {
       observer.observe(cardRef.current);
     }
-    
     return () => observer.disconnect();
   }, []);
-  
-  return (
-    <div 
-      ref={cardRef} 
-      className={`circle-cloud-card mx-auto transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`} 
-      style={{
-        backgroundColor: circle.color,
-        animationDelay: `${index * 0.2}s`
-      }}
-    >
+  return <div ref={cardRef} className={`circle-cloud-card mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{
+    backgroundColor: circle.color,
+    animationDelay: `${index * 0.2}s`
+  }}>
       <div className="w-full h-full flex flex-col items-center justify-center text-center p-6">
         <h3 className="text-lg font-bold text-white mb-2 leading-tight">
           {circle.title}
@@ -114,10 +99,8 @@ const CircleCard = ({
           {circle.description}
         </p>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 const PhoneMockup = ({
   video,
   className = ""
@@ -126,16 +109,11 @@ const PhoneMockup = ({
   className?: string;
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  
-  return (
-    <div className={`relative ${className}`}>
+  return <div className={`relative ${className}`}>
       <div className="w-32 sm:w-40 md:w-48 lg:w-56 aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-xl border-4 border-gray-800 relative">
         <img src={video.thumbnail} alt={video.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <button 
-            className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all"
-            onClick={() => setIsPlaying(!isPlaying)}
-          >
+          <button className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all" onClick={() => setIsPlaying(!isPlaying)}>
             <div className="w-0 h-0 border-l-[8px] border-l-white border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
           </button>
         </div>
@@ -144,17 +122,14 @@ const PhoneMockup = ({
           <p className="text-white/80 text-xs">{video.client}</p>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 const UnifiedShowcase = () => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -100px 0px"
     };
-    
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -162,17 +137,13 @@ const UnifiedShowcase = () => {
         }
       });
     }, observerOptions);
-    
     const elements = document.querySelectorAll('.reveal-on-scroll');
     elements.forEach(el => observer.observe(el));
-    
     return () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white">
+  return <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white">
       {/* Floating Background Icons */}
       <FloatingIcon Icon={Instagram} className="top-10 left-[10%] animate-float" />
       <FloatingIcon Icon={Diamond} className="top-20 right-[15%] animate-float-slow" />
@@ -196,19 +167,13 @@ const UnifiedShowcase = () => {
 
         {/* Circle Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 mb-20">
-          {circleData.map((circle, index) => (
-            <CircleCard key={circle.id} circle={circle} index={index} />
-          ))}
+          {circleData.map((circle, index) => <CircleCard key={circle.id} circle={circle} index={index} />)}
         </div>
 
         {/* Transition to Phone Mockups */}
         <div className="text-center mb-12">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4 reveal-on-scroll">
-            Scroll-Stopping Founder Reels
-          </h3>
-          <p className="text-muted-foreground max-w-2xl mx-auto reveal-on-scroll">
-            Experience our authentic vertical video content created for founders just like you
-          </p>
+          
+          
         </div>
 
         {/* Phone Layout */}
@@ -221,14 +186,9 @@ const UnifiedShowcase = () => {
           </div>
 
           {/* Bottom Row - 2 Staggered Phones */}
-          <div className="flex justify-center items-center gap-8 sm:gap-12 md:gap-16 lg:gap-24 reveal-on-scroll">
-            <PhoneMockup video={videos[3]} className="transform -rotate-2 -translate-y-4" />
-            <PhoneMockup video={videos[4]} className="transform rotate-2 translate-y-2" />
-          </div>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default UnifiedShowcase;
