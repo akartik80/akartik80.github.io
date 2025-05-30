@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Eye, Users, Instagram, Zap } from 'lucide-react';
 
@@ -26,11 +27,12 @@ const differentiators = [{
 }, {
   id: 4,
   icon: <Zap className="h-8 w-8" />,
-  title: "Make the Process Addictive (In a Good Way)",
+  title: "We Use 'Edutelling'™ (Strategically)",
   description: "We mix storytelling and education so you come across as human and credible—never preachy.",
   bgColor: "bg-[#678bd4]",
   position: "top-16 right-4"
 }];
+
 const WhyDifferent = () => {
   return <section id="why-different" className="py-24 bg-gradient-to-b from-white via-autthia-blue/5 to-white overflow-hidden relative">
       <div className="container mx-auto px-4 relative">
@@ -52,18 +54,18 @@ const WhyDifferent = () => {
             {differentiators.map((item, index) => {
             // Define vertical offsets for each card to create floating effect
             const verticalOffsets = ['translate-y-4', '-translate-y-2', 'translate-y-6', '-translate-y-4'];
-            return <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow ${verticalOffsets[index]}`} style={{
+            return <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow ${verticalOffsets[index]} hover:bg-indigo-300 transition-colors duration-300`} style={{
               animationDelay: `${index * 0.5}s`,
               animationDuration: `${6 + index}s`
             }}>
-                  <div className="flex flex-col items-center text-center p-8 h-full justify-center bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-5xl">
-                    <div className="text-autthia-purple group-hover:text-autthia-dark-purple transition-colors duration-300 mb-4">
+                  <div className="flex flex-col items-center text-center p-8 h-full justify-center">
+                    <div className="text-white group-hover:text-gray-800 transition-colors duration-300 mb-4">
                       {item.icon}
                     </div>
-                    <h3 className="text-lg font-bold mb-3 group-hover:text-autthia-dark-purple transition-colors duration-300 text-zinc-600">
+                    <h3 className="text-lg font-bold mb-3 text-white group-hover:text-gray-800 transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-white/90 group-hover:text-gray-700 transition-colors duration-300">
                       {item.description}
                     </p>
                   </div>
@@ -74,18 +76,18 @@ const WhyDifferent = () => {
         
         {/* Mobile: Vertical Stack */}
         <div className="md:hidden space-y-8 reveal-on-scroll">
-          {differentiators.map((item, index) => <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow mx-auto`} style={{
+          {differentiators.map((item, index) => <div key={item.id} className={`circle-cloud-card ${item.bgColor} group animate-float-slow mx-auto hover:bg-indigo-300 transition-colors duration-300`} style={{
           animationDelay: `${index * 0.3}s`,
           animationDuration: `${6 + index}s`
         }}>
               <div className="flex flex-col items-center text-center p-8 h-full justify-center">
-                <div className="text-autthia-purple group-hover:text-autthia-dark-purple transition-colors duration-300 mb-4">
+                <div className="text-white group-hover:text-gray-800 transition-colors duration-300 mb-4">
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold mb-3 group-hover:text-autthia-dark-purple transition-colors duration-300">
+                <h3 className="text-lg font-bold mb-3 text-white group-hover:text-gray-800 transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-white/90 group-hover:text-gray-700 transition-colors duration-300">
                   {item.description}
                 </p>
               </div>
