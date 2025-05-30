@@ -1,4 +1,5 @@
 
+
 import React, { useEffect } from 'react';
 import { Eye, Users, Instagram, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
 import {
@@ -32,27 +33,39 @@ const differentiators = [{
   description: "We blend education + storytelling so you show up as credible, not preachy.",
 }];
 
-// 4 phone mockups with the same video
+// 8 phone mockups with the same video
 const processSteps = [{
   id: 1,
   videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
-  thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-  angle: "-8deg"
+  angle: "-6deg"
 }, {
   id: 2,
   videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
-  thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
   angle: "4deg"
 }, {
   id: 3,
   videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
-  thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
   angle: "-3deg"
 }, {
   id: 4,
   videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
-  thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+  angle: "5deg"
+}, {
+  id: 5,
+  videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
+  angle: "-4deg"
+}, {
+  id: 6,
+  videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
   angle: "6deg"
+}, {
+  id: 7,
+  videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
+  angle: "-2deg"
+}, {
+  id: 8,
+  videoUrl: "https://drive.google.com/uc?export=download&id=142WhHCl0YSSaFCQL4-gjSs-TXlbwwE92",
+  angle: "3deg"
 }];
 
 const WhyDifferent = () => {
@@ -151,22 +164,23 @@ const WhyDifferent = () => {
             <span className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent font-semibold text-5xl">Scroll-Stopping Founder Reels</span>
           </h2>
 
-          <div className="max-w-6xl mx-auto reveal-on-scroll relative py-8">
+          <div className="max-w-7xl mx-auto reveal-on-scroll relative py-8">
             {/* Fade gradients on edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
             
             <Carousel
               opts={{
                 align: "start",
                 loop: true,
+                slidesToScroll: 1,
               }}
-              className="w-full px-12"
+              className="w-full px-16"
             >
-              <CarouselContent className="-ml-12 py-12">
+              <CarouselContent className="-ml-6 py-12">
                 {processSteps.map((step, index) => (
-                  <CarouselItem key={step.id} className="pl-12 basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
-                    <div className="group mx-auto w-fit px-8" style={{
+                  <CarouselItem key={step.id} className="pl-6 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    <div className="group mx-auto w-fit px-4" style={{
                       transform: `rotate(${step.angle})`,
                       animationDelay: `${index * 0.2}s`
                     }}>
@@ -189,7 +203,6 @@ const WhyDifferent = () => {
                               disablePictureInPicture
                             >
                               <source src={step.videoUrl} type="video/mp4" />
-                              <img src={step.thumbnail} alt="Video content" className="w-full h-full object-cover" />
                             </video>
                             
                             {/* Subtle overlay gradient */}
@@ -216,9 +229,9 @@ const WhyDifferent = () => {
                 ))}
               </CarouselContent>
               
-              {/* Enhanced carousel controls */}
-              <CarouselPrevious className="absolute -left-16 top-1/2 -translate-y-1/2 w-14 h-14 border-2 border-indigo-500 bg-white hover:bg-indigo-50 hover:border-indigo-600 hover:shadow-lg hover:shadow-indigo-300/50 transition-all duration-300 text-indigo-600 hover:text-indigo-700" />
-              <CarouselNext className="absolute -right-16 top-1/2 -translate-y-1/2 w-14 h-14 border-2 border-indigo-500 bg-white hover:bg-indigo-50 hover:border-indigo-600 hover:shadow-lg hover:shadow-indigo-300/50 transition-all duration-300 text-indigo-600 hover:text-indigo-700" />
+              {/* Enhanced carousel controls with bright glow */}
+              <CarouselPrevious className="absolute -left-20 top-1/2 -translate-y-1/2 w-16 h-16 border-2 border-indigo-500 bg-white hover:bg-indigo-50 hover:border-indigo-600 shadow-lg shadow-indigo-300/50 hover:shadow-xl hover:shadow-indigo-400/60 transition-all duration-300 text-indigo-600 hover:text-indigo-700" />
+              <CarouselNext className="absolute -right-20 top-1/2 -translate-y-1/2 w-16 h-16 border-2 border-indigo-500 bg-white hover:bg-indigo-50 hover:border-indigo-600 shadow-lg shadow-indigo-300/50 hover:shadow-xl hover:shadow-indigo-400/60 transition-all duration-300 text-indigo-600 hover:text-indigo-700" />
             </Carousel>
           </div>
         </div>
@@ -228,3 +241,4 @@ const WhyDifferent = () => {
 };
 
 export default WhyDifferent;
+
