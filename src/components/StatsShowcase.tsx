@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from 'react';
 import { Globe, Rocket, RotateCcw, Wrench, Smile } from 'lucide-react';
 
@@ -101,7 +100,7 @@ const StatCard = ({
           }`} 
           size={32} 
         />
-        <div className={`text-5xl lg:text-6xl font-bold gradient-text mb-2 transition-all duration-300 ${
+        <div className={`text-5xl lg:text-6xl font-bold mb-2 transition-all duration-300 text-transparent bg-gradient-to-r from-[#678bd4] to-[#678bd4]/80 bg-clip-text hover:opacity-90 ${
           isHovered ? 'scale-105 drop-shadow-lg' : ''
         }`}
         style={{
