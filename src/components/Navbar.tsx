@@ -18,10 +18,10 @@ const Navbar = () => {
   return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md shadow-sm py-3' : 'py-5'}`}>
       <div className="container mx-auto flex items-center justify-between">
         <a href="#" className="flex items-center">
-          <img alt="Autthia" style={{
+          <img alt="Autthia" className="h-8 w-auto object-contain" style={{
           filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(214deg) brightness(97%) contrast(97%)',
           mixBlendMode: 'multiply'
-        }} src="/lovable-uploads/727ddbfc-8e71-4057-88fe-0bc397f966cb.png" className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 text-transparent bg-clip-text" />
+        }} src="/lovable-uploads/727ddbfc-8e71-4057-88fe-0bc397f966cb.png" />
         </a>
         
         <div className="hidden md:flex items-center gap-8">
