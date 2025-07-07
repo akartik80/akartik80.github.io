@@ -23,7 +23,7 @@ const Navbar = () => {
           <a href="#process" className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">Process</a>
           <a href="#strategy" className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">Strategy</a>
           <a href="#work" className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">Work</a>
-          <a href="#contact" className="hover:text-autthia-purple transition-colors text-white drop-shadow-sm">Contact</a>
+          <a href="#contact" className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">Contact</a>
         </div>
         
         <Button className="bg-white text-autthia-dark-purple hover:bg-white/90 transition-opacity">
