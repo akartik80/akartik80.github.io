@@ -116,7 +116,10 @@ const Strategy = () => {
               </div>
               <div className="mt-16">
                 <h3 className="mb-4 font-extrabold text-white text-4xl">{cards[0].heading}</h3>
-                <p className="text-gray-700 leading-relaxed">{cards[0].subheading}</p>
+                <p className="text-gray-700 leading-relaxed mb-6">{cards[0].subheading}</p>
+                <button className="bg-white text-[#678bd4] rounded-full px-4 py-2 font-semibold hover:opacity-90">
+                  Book now
+                </button>
               </div>
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
             </div>
@@ -141,7 +144,10 @@ const Strategy = () => {
               </div>
               <div className="mt-16">
                 <h3 className="mb-4 text-4xl font-extrabold text-white">{cards[1].heading}</h3>
-                <p className="text-gray-700 leading-relaxed">{cards[1].subheading}</p>
+                <p className="text-gray-700 leading-relaxed mb-6">{cards[1].subheading}</p>
+                <button className="bg-white text-[#678bd4] rounded-full px-4 py-2 font-semibold hover:opacity-90">
+                  Book now
+                </button>
               </div>
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
             </div>
@@ -166,7 +172,10 @@ const Strategy = () => {
               </div>
               <div className="mt-16">
                 <h3 className="mb-4 text-white font-extrabold text-4xl">{cards[2].heading}</h3>
-                <p className="text-gray-700 leading-relaxed">{cards[2].subheading}</p>
+                <p className="text-gray-700 leading-relaxed mb-6">{cards[2].subheading}</p>
+                <button className="bg-white text-[#678bd4] rounded-full px-4 py-2 font-semibold hover:opacity-90">
+                  Book now
+                </button>
               </div>
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-white/20 rounded-full blur-2xl"></div>
             </div>
