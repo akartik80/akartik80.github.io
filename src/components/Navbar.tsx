@@ -21,7 +21,7 @@ const Navbar = () => {
           <img alt="Autthia" style={{
           filter: 'brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(2878%) hue-rotate(214deg) brightness(97%) contrast(97%)',
           mixBlendMode: 'multiply'
-        }} className="h-10 w-auto object-fill" src="/lovable-uploads/890518f5-f428-4b21-9c08-3e88b804ea60.png" />
+        }} src="/lovable-uploads/727ddbfc-8e71-4057-88fe-0bc397f966cb.png" className="h-28 w-auto object-contain" />
         </a>
         
         <div className="hidden md:flex items-center gap-8">
