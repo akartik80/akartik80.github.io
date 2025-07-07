@@ -26,10 +26,7 @@ const Navbar = () => {
           <a href="#contact" className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">Contact</a>
         </div>
         
-        <Button className="bg-white text-autthia-dark-purple hover:bg-white/90 transition-opacity">
-          <Instagram className="mr-2 h-4 w-4" />
-          Follow Us
-        </Button>
+        
       </div>
     </nav>;
 };
