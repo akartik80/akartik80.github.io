@@ -21,7 +21,7 @@ const Navbar = () => {
         
         <div className="hidden md:flex items-center gap-8">
           <a href="#process" className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">Process</a>
-          <a href="#strategy" className="hover:text-autthia-purple transition-colors text-white drop-shadow-sm">Strategy</a>
+          <a href="#strategy" className="bg-gradient-to-r from-[#678bd4] via-[#678bd4]/80 to-[#678bd4]/60 bg-clip-text text-transparent">Strategy</a>
           <a href="#work" className="hover:text-autthia-purple transition-colors text-white drop-shadow-sm">Work</a>
           <a href="#contact" className="hover:text-autthia-purple transition-colors text-white drop-shadow-sm">Contact</a>
         </div>
