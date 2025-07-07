@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Globe, Rocket, RotateCcw, Wrench, Smile } from 'lucide-react';
+
 const stats = [{
   id: 1,
   number: "6+",
@@ -36,6 +37,7 @@ const stats = [{
   suffix: "%",
   icon: Smile
 }];
+
 const StatCard = ({
   stat,
   index
@@ -47,6 +49,7 @@ const StatCard = ({
   const [hasAnimated, setHasAnimated] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const statRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -72,35 +75,56 @@ const StatCard = ({
     }, {
       threshold: 0.3
     });
+
     if (statRef.current) {
       observer.observe(statRef.current);
     }
+
     return () => observer.disconnect();
   }, [stat.countTo, hasAnimated]);
+
   const IconComponent = stat.icon;
-  return <div ref={statRef} className="text-center reveal-on-scroll group cursor-pointer" style={{
-    animationDelay: `${index * 0.1}s`
-  }} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+
+  return (
+    <div 
+      ref={statRef} 
+      className="text-center reveal-on-scroll group cursor-pointer"
+      style={{ animationDelay: `${index * 0.1}s` }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="flex flex-col items-center mb-4">
-        <IconComponent className={`text-[#678bd4] mb-3 transition-all duration-300 ${isHovered ? 'scale-110 text-[#678bd4]' : ''}`} size={32} />
-        <div style={{
-        textShadow: isHovered ? '0 0 20px rgba(103, 139, 212, 0.4)' : 'none'
-      }} className="">
+        <IconComponent 
+          className={`text-[#678bd4] mb-3 transition-all duration-300 ${
+            isHovered ? 'scale-110 text-[#678bd4]' : ''
+          }`} 
+          size={32} 
+        />
+        <div className={`text-5xl lg:text-6xl font-bold mb-2 transition-all duration-300 text-transparent bg-gradient-to-r from-[#678bd4] to-[#678bd4]/80 bg-clip-text hover:opacity-90 ${
+          isHovered ? 'scale-105 drop-shadow-lg' : ''
+        }`}
+        style={{
+          textShadow: isHovered ? '0 0 20px rgba(103, 139, 212, 0.4)' : 'none'
+        }}>
           {count}{stat.suffix}
         </div>
       </div>
       <p className="text-gray-600 text-sm lg:text-base font-medium leading-relaxed max-w-[200px] mx-auto">
         {stat.label}
       </p>
-    </div>;
+    </div>
+  );
 };
+
 const StatsShowcase = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -100px 0px"
     };
+    
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -108,6 +132,7 @@ const StatsShowcase = () => {
         }
       });
     }, observerOptions);
+
     const elements = document.querySelectorAll('.reveal-on-scroll');
     elements.forEach(el => observer.observe(el));
 
@@ -116,6 +141,7 @@ const StatsShowcase = () => {
     if (scrollContainer) {
       let scrollSpeed = 1;
       let isScrolling = true;
+
       const autoScroll = () => {
         if (isScrolling && scrollContainer) {
           scrollContainer.scrollLeft += scrollSpeed;
@@ -126,6 +152,7 @@ const StatsShowcase = () => {
           }
         }
       };
+
       const interval = setInterval(autoScroll, 20);
 
       // Pause on hover
@@ -135,22 +162,34 @@ const StatsShowcase = () => {
       const handleMouseLeave = () => {
         isScrolling = true;
       };
+
       scrollContainer.addEventListener('mouseenter', handleMouseEnter);
       scrollContainer.addEventListener('mouseleave', handleMouseLeave);
+
       return () => {
         clearInterval(interval);
         scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
         scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
       };
     }
+
     return () => {
       elements.forEach(el => observer.unobserve(el));
     };
   }, []);
 
   // Sample analytics screenshots
-  const analyticsScreenshots = ["/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png", "/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png", "/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png", "/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png", "/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png", "/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png"];
-  return <section className="py-24 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-indigo-50">
+  const analyticsScreenshots = [
+    "/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png",
+    "/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png",
+    "/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png",
+    "/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png",
+    "/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png",
+    "/lovable-uploads/b0546885-f305-4ba2-aab2-73a3c9c9593a.png"
+  ];
+
+  return (
+    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-indigo-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 reveal-on-scroll">
@@ -161,24 +200,40 @@ const StatsShowcase = () => {
 
         {/* Stats Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 mb-24">
-          {stats.map((stat, index) => <StatCard key={stat.id} stat={stat} index={index} />)}
+          {stats.map((stat, index) => (
+            <StatCard key={stat.id} stat={stat} index={index} />
+          ))}
         </div>
 
         {/* Screenshot Carousel */}
         <div className="reveal-on-scroll">
-          <div ref={scrollRef} className="flex gap-8 overflow-x-auto scrollbar-hide py-8" style={{
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none'
-        }}>
+          <div 
+            ref={scrollRef} 
+            className="flex gap-8 overflow-x-auto scrollbar-hide py-8" 
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none'
+            }}
+          >
             {/* Duplicate the array to create seamless loop */}
-            {[...analyticsScreenshots, ...analyticsScreenshots].map((screenshot, index) => <div key={index} className="flex-shrink-0 w-80 h-96 bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105" style={{
-            aspectRatio: '9/16'
-          }}>
-                <img src={screenshot} alt={`Instagram Analytics Screenshot ${index % analyticsScreenshots.length + 1}`} className="w-full h-full object-cover" />
-              </div>)}
+            {[...analyticsScreenshots, ...analyticsScreenshots].map((screenshot, index) => (
+              <div 
+                key={index} 
+                className="flex-shrink-0 w-80 h-96 bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105" 
+                style={{ aspectRatio: '9/16' }}
+              >
+                <img 
+                  src={screenshot} 
+                  alt={`Instagram Analytics Screenshot ${index % analyticsScreenshots.length + 1}`} 
+                  className="w-full h-full object-cover" 
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default StatsShowcase;
